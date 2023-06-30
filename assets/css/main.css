@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.active {
+		@apply left-0 top-0 min-h-full fixed !important;
+	}
+	.router-link-exact-active {
+		@apply text-mainColor !important;
+	}
+}
