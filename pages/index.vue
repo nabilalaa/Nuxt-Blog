@@ -80,7 +80,7 @@ export default {
 	},
 	mounted() {
 		axios.get(
-			"https://rapid-insect.localsite.io/wp-json/wp/v2/posts?_embed"
+			"https://feline-rail.000webhostapp.com/wp-json/wp/v2/posts?_embed"
 		).then((response) => {
 			this.posts = response.data;
 			console.log(response.data);
