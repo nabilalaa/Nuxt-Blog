@@ -36,7 +36,7 @@ export default {
 	methods: {
 		getPost() {
 			axios.get(
-				`http://blog.local/wp-json/wp/v2/posts?slug=${this.slug.slug}&_embed`
+				`https://rapid-insect.localsite.io/wp-json/wp/v2/posts?slug=${this.slug.slug}&_embed`
 			).then((response) => {
 				this.post = response.data[0];
 				console.log(response.data[0]);

@@ -79,12 +79,12 @@ export default {
 		}
 	},
 	mounted() {
-		axios.get("http://blog.local/wp-json/wp/v2/posts?_embed").then(
-			(response) => {
-				this.posts = response.data;
-				console.log(response.data);
-			}
-		);
+		axios.get(
+			"https://rapid-insect.localsite.io/wp-json/wp/v2/posts?_embed"
+		).then((response) => {
+			this.posts = response.data;
+			console.log(response.data);
+		});
 	}
 };
 </script>
