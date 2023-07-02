@@ -1,6 +1,6 @@
 <template>
 	<SideMenu />
-	<nav class="text-text w-full p-8">
+	<nav class="w-full p-8">
 		<div class="container">
 			<div
 				class="flex justify-between lg:justify-center items-center mb-16"
@@ -19,11 +19,11 @@
 					XX
 				</div>
 			</div>
-			<ul class="lg:flex hidden justify-center">
+			<ul class="lg:flex hidden justify-center text-black">
 				<li>
 					<NuxtLink
 						to="/"
-						class="p-2 ml-6 opacity-80 font-bold hover:opacity-100 transition-opacity text-white"
+						class="p-2 ml-6 opacity-80 font-bold hover:opacity-100 transition-opacity"
 					>
 						الصفحة الرئيسية</NuxtLink
 					>

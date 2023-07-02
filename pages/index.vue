@@ -1,38 +1,61 @@
 <template>
-	<Html lang="ar" dir="rtl"></Html>
-	<Navbar />
-	<SideMenu />
-
 	<section class="py-20">
 		<div class="container">
-			<div
-				class="grid lg:grid-cols-2 lg:grid-rows-2 grid-cols-1 gap-4 h-[600px] w-full"
-			>
+			<div class="lg:flex gap-4 lg:h-[35rem] h-full">
 				<post
-					v-for="post in posts"
+					v-for="post in posts.slice(0, 1)"
 					:key="post"
-					class="col-span-1 row-span-2 w-full"
-					image="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-					to="/"
+					class="lg:w-[60%] lg:h-full w-full h-96"
+					:image="
+						post._embedded['wp:featuredmedia']
+							? post._embedded[
+									'wp:featuredmedia'
+							  ][0].source_url
+							: ''
+					"
+					:to="`posts/${post.slug}`"
 					:title="post.title.rendered"
-					:date="post.date.toDateString()"
+					:date="post.date"
 				/>
+				<div
+					class="lg:flex lg:gap-y-4 lg:flex-col flex-col lg:w-1/2 lg:h-full h-full"
+				>
+					<post
+						v-for="post in posts.slice(1, 3)"
+						:key="post"
+						class="lg:w-full lg:h-1/2 w-full h-[400px] lg:my-0 my-4"
+						:image="
+							post._embedded['wp:featuredmedia']
+								? post._embedded[
+										'wp:featuredmedia'
+								  ][0].source_url
+								: ''
+						"
+						:to="`posts/${post.slug}`"
+						:title="post.title.rendered"
+						:date="post.date"
+					/>
+				</div>
 			</div>
 		</div>
 	</section>
 	<section class="py-20">
 		<div class="container">
-			<div class="grid grid-cols-3 h-[400px] gap-4 w-full">
+			<div class="grid grid-cols-2 gap-4 w-full">
 				<post
-					image="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-					to="/"
-				/>
-				<post
-					image="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-					to="about"
-				/>
-				<post
-					image="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+					v-for="post in posts.slice(3)"
+					:key="post"
+					:image="
+						post._embedded['wp:featuredmedia']
+							? post._embedded[
+									'wp:featuredmedia'
+							  ][0].source_url
+							: ''
+					"
+					:to="`posts/${post.slug}`"
+					:title="post.title.rendered"
+					:date="post.date"
+					class="h-[400px]"
 				/>
 			</div>
 		</div>
@@ -45,11 +68,18 @@ import axios from "axios";
 export default {
 	data() {
 		return {
-			posts: null
+			posts: []
 		};
 	},
+	computed: {
+		thingProps() {
+			return this.thing.href
+				? { is: "a", href: this.thing.href }
+				: { is: "span" };
+		}
+	},
 	mounted() {
-		axios.get("http://blog.local/wp-json/wp/v2/posts").then(
+		axios.get("http://blog.local/wp-json/wp/v2/posts?_embed").then(
 			(response) => {
 				this.posts = response.data;
 				console.log(response.data);

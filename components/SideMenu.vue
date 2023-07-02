@@ -19,11 +19,11 @@
 			<NuxtLink
 				v-for="link in links"
 				:key="link"
-				to="/"
+				:to="link.to"
 				@click="closeMenu"
 				class="text-secondaryColor flex p-4 rounded-xl mb-2 font-bold"
 			>
-				<li class="">{{ link }}</li>
+				<li class="">{{ link.name }}</li>
 			</NuxtLink>
 		</ul>
 	</div>
@@ -40,7 +40,21 @@ export default {
 	},
 	data() {
 		return {
-			links: ["الصفحة الرئيسية", "اتصل بنا", "عنا"]
+			links: [
+				{
+					name: "الصفحة الرئيسية",
+					to: "/"
+				},
+				{
+					name: "اتصل بنا",
+					to: "about"
+				},
+				{
+					name: "عنا",
+					to: "hello"
+				}
+			]
+			// [("الصفحة الرئيسية", "اتصل بنا", "عنا")]
 		};
 	}
 };
