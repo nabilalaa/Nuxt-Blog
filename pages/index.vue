@@ -1,5 +1,10 @@
 <template>
-	{{ posts }}
+	<section class="grid grid-cols-3 gao-4">
+		<div v-for="post in posts" :key="post">
+			<h1>{{ post.title }}</h1>
+			<img :src="post.image" alt="" class="w-40" />
+		</div>
+	</section>
 	<!-- <section class="py-20">
 		<div class="container">
 			<div class="lg:flex gap-4 lg:h-[35rem] h-full">
