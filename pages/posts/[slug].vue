@@ -10,7 +10,7 @@
 						p._embedded['wp:featuredmedia']
 							? p._embedded['wp:featuredmedia'][0]
 									.source_url
-							: ''
+							: 'https://placehold.co/600x400'
 					"
 					alt=""
 				/>
