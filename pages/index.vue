@@ -41,7 +41,7 @@
 	</section>
 	<section class="py-20">
 		<div class="container">
-			<div class="grid grid-cols-2 gap-4 w-full">
+			<div class="grid lg:grid-cols-2 grid-cols-1 gap-4 w-full">
 				<post
 					v-for="post in posts.slice(3)"
 					:key="post"
