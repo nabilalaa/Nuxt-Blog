@@ -48,7 +48,7 @@
 // };
 
 const slug = useRoute().params;
-const { data: post } = useFetch(
+const { data: post } = useLazyFetch(
 	`https://jsonplaceholder.typicode.com/posts?title=${slug.slug}`
 );
 

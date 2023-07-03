@@ -63,7 +63,9 @@
 </template>
 
 <script setup>
-const { data: posts } = useFetch("https://jsonplaceholder.typicode.com/posts");
+const { data: posts } = useLazyFetch(
+	"https://jsonplaceholder.typicode.com/posts"
+);
 // export default {
 // 	data() {
 // 		return {
