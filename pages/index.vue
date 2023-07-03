@@ -15,7 +15,7 @@
 					"
 					:to="`posts/${post.slug}`"
 					:title="post.title.rendered"
-					:date="post.date"
+					:date="post.date.slice(0, 10)"
 				/>
 				<div
 					class="lg:flex lg:gap-y-4 lg:flex-col flex-col lg:w-1/2 lg:h-full h-full"
@@ -33,7 +33,7 @@
 						"
 						:to="`posts/${post.slug}`"
 						:title="post.title.rendered"
-						:date="post.date"
+						:date="post.date.slice(0, 10)"
 					/>
 				</div>
 			</div>
@@ -54,7 +54,7 @@
 					"
 					:to="`posts/${post.slug}`"
 					:title="post.title.rendered"
-					:date="post.date"
+					:date="post.date.slice(0, 10)"
 					class="h-[400px]"
 				/>
 			</div>
@@ -70,13 +70,6 @@ export default {
 		return {
 			posts: []
 		};
-	},
-	computed: {
-		thingProps() {
-			return this.thing.href
-				? { is: "a", href: this.thing.href }
-				: { is: "span" };
-		}
 	},
 	mounted() {
 		axios.get(

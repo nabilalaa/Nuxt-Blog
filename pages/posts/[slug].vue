@@ -1,55 +1,58 @@
 <template>
 	<section class="py-24">
 		<div class="container">
-			<div>
+			<!-- <h1>{{ post.data.value.title }}</h1> -->
+
+			<div v-for="p in post" :key="p">
 				<img
-					class="lg:h-96 lg:w-full w-full h-full mb-4"
+					class="lg:h-96 w-full h-full"
 					:src="
-						post._embedded
-							? post._embedded[
-									'wp:featuredmedia'
-							  ][0].source_url
+						p._embedded['wp:featuredmedia']
+							? p._embedded['wp:featuredmedia'][0]
+									.source_url
 							: ''
 					"
 					alt=""
 				/>
-				<h1 v-html="post.title ? post.title.rendered : ''"></h1>
+				<h1>{{ p.title.rendered }}</h1>
 				<p class="my-4">
-					{{ post.date ? post.date.slice(0, 10) : "" }}
+					{{ p.date.slice(0, 10) }}
 				</p>
-				<p
-					class="content"
-					v-html="post.content ? post.content.rendered : ''"
-				></p>
+				<p class="content" v-html="p.content.rendered"></p>
 			</div>
 		</div>
 	</section>
 </template>
 
-<script>
-import axios from "axios";
+<script setup>
+// export default {
+// mounted() {
+// 	this.getPost();
+// },
+// methods: {
+// 	getPost() {
+// 		axios.get(
+// 			`https://feline-rail.000webhostapp.com/wp-json/wp/v2/posts?slug=${this.slug.slug}&_embed`
+// 		).then((response) => {
+// 			this.post = response.data[0];
+// 			console.log(response.data[0]);
+// 		});
+// 	}
+// },
+// data() {
+// 	return {
+// 		slug: this.$route.params,
+// 		post: ""
+// 	};
+// }
+// };
 
-export default {
-	mounted() {
-		this.getPost();
-	},
-	methods: {
-		getPost() {
-			axios.get(
-				`https://feline-rail.000webhostapp.com/wp-json/wp/v2/posts?slug=${this.slug.slug}&_embed`
-			).then((response) => {
-				this.post = response.data[0];
-				console.log(response.data[0]);
-			});
-		}
-	},
-	data() {
-		return {
-			slug: this.$route.params,
-			post: ""
-		};
-	}
-};
+const slug = useRoute().params;
+const { data: post } = useFetch(
+	`https://feline-rail.000webhostapp.com/wp-json/wp/v2/posts?slug=${slug.slug}&_embed`
+);
+
+console.log(post);
 </script>
 
 <style>
@@ -62,17 +65,46 @@ export default {
 	list-style-position: inside;
 }
 h1 {
-	font-size: 3rem;
+	font-size: 2em;
+	font-weight: bold;
+	margin: 0.67em 0;
 }
+
 h2 {
-	font-size: 2rem;
+	font-size: 1.5em;
+	font-weight: bold;
+	margin: 0.83em 0;
 }
 
 h3 {
-	font-size: 1rem;
+	font-size: 1.17em;
+	font-weight: bold;
+	margin: 1em 0;
+}
+
+h4 {
+	font-size: 1em;
+	font-weight: bold;
+	margin: 1.33em 0;
+}
+
+h5 {
+	font-size: 0.83em;
+	font-weight: bold;
+	margin: 1.67em 0;
+}
+
+h6 {
+	font-size: 0.67em;
+	font-weight: bold;
+	margin: 2.33em 0;
 }
 
 p {
 	margin: 2rem 0;
+}
+
+.content img {
+	width: 50%;
 }
 </style>
