@@ -62,24 +62,27 @@
 	</section>
 </template>
 
-<script>
-import axios from "axios";
+<script setup>
+const { data: posts } = useFetch(
+	`https://feline-rail.000webhostapp.com/wp-json/wp/v2/posts?_embed`
+);
 
-export default {
-	data() {
-		return {
-			posts: []
-		};
-	},
-	mounted() {
-		axios.get(
-			"https://feline-rail.000webhostapp.com/wp-json/wp/v2/posts?_embed"
-		).then((response) => {
-			this.posts = response.data;
-			console.log(response.data);
-		});
-	}
-};
+console.log(posts);
+// export default {
+// 	data() {
+// 		return {
+// 			posts: []
+// 		};
+// 	},
+// 	mounted() {
+// 		axios.get(
+// 			"https://feline-rail.000webhostapp.com/wp-json/wp/v2/posts?_embed"
+// 		).then((response) => {
+// 			this.posts = response.data;
+// 			console.log(response.data);
+// 		});
+// 	}
+// };
 </script>
 
 <style>

@@ -8,6 +8,6 @@ export default defineNuxtConfig({
 		}
 	},
 	server: {
-		host: "https://blog-0-0.netlify.app" // default: localhost
+		host: "0" // default: localhost
 	}
 });
