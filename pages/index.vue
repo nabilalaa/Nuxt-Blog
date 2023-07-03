@@ -1,11 +1,13 @@
 <template>
-	<section class="grid grid-cols-3 gao-4">
+	<!-- const { data: posts } = useFetch("https://fakestoreapi.com/products");
+
+	<section class="grid grid-cols-3 gap-4">
 		<div v-for="post in posts" :key="post">
 			<h1>{{ post.title }}</h1>
 			<img :src="post.image" alt="" class="w-40" />
 		</div>
-	</section>
-	<!-- <section class="py-20">
+	</section> -->
+	<section class="py-20">
 		<div class="container">
 			<div class="lg:flex gap-4 lg:h-[35rem] h-full">
 				<post
@@ -44,8 +46,8 @@
 				</div>
 			</div>
 		</div>
-	</section> -->
-	<!-- <section class="py-20">
+	</section>
+	<section class="py-20">
 		<div class="container">
 			<div class="grid lg:grid-cols-2 grid-cols-1 gap-4 w-full">
 				<post
@@ -65,12 +67,13 @@
 				/>
 			</div>
 		</div>
-	</section> -->
+	</section>
 </template>
 
 <script setup>
-const { data: posts } = useFetch("https://fakestoreapi.com/products");
-
+const { data: posts } = useFetch(
+	"https://feline-rail.000webhostapp.com/wp-json/wp/v2/posts?_embed"
+);
 // export default {
 // 	data() {
 // 		return {
