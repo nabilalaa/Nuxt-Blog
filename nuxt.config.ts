@@ -6,5 +6,8 @@ export default defineNuxtConfig({
 			tailwindcss: {},
 			autoprefixer: {}
 		}
+	},
+	server: {
+		host: "https://blog-0-0.netlify.app" // default: localhost
 	}
 });
