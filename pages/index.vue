@@ -7,7 +7,7 @@
 			<img :src="post.image" alt="" class="w-40" />
 		</div>
 	</section> -->
-	<section class="py-20">
+	<!-- <section class="py-20">
 		<div class="container">
 			<div class="lg:flex gap-4 lg:h-[35rem] h-full">
 				<post
@@ -46,23 +46,15 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 	<section class="py-20">
 		<div class="container">
 			<div class="grid lg:grid-cols-2 grid-cols-1 gap-4 w-full">
 				<post
-					v-for="post in posts.slice(3)"
+					v-for="post in posts"
 					:key="post"
-					:image="
-						post._embedded['wp:featuredmedia']
-							? post._embedded[
-									'wp:featuredmedia'
-							  ][0].source_url
-							: ''
-					"
-					:to="`posts/${post.slug}`"
-					:title="post.title.rendered"
-					:date="post.date.slice(0, 10)"
+					:to="`posts/${post.title}`"
+					:title="post.title"
 					class="h-[400px]"
 				/>
 			</div>
@@ -71,9 +63,7 @@
 </template>
 
 <script setup>
-const { data: posts } = useFetch(
-	"https://feline-rail.000webhostapp.com/wp-json/wp/v2/posts?_embed"
-);
+const { data: posts } = useFetch("https://jsonplaceholder.typicode.com/posts");
 // export default {
 // 	data() {
 // 		return {
