@@ -1,5 +1,6 @@
 <template>
-	<section class="py-20">
+	{{ posts }}
+	<!-- <section class="py-20">
 		<div class="container">
 			<div class="lg:flex gap-4 lg:h-[35rem] h-full">
 				<post
@@ -38,8 +39,8 @@
 				</div>
 			</div>
 		</div>
-	</section>
-	<section class="py-20">
+	</section> -->
+	<!-- <section class="py-20">
 		<div class="container">
 			<div class="grid lg:grid-cols-2 grid-cols-1 gap-4 w-full">
 				<post
@@ -59,15 +60,12 @@
 				/>
 			</div>
 		</div>
-	</section>
+	</section> -->
 </template>
 
 <script setup>
-const { data: posts } = useFetch(
-	`https://feline-rail.000webhostapp.com/wp-json/wp/v2/posts?_embed`
-);
+const { data: posts } = useFetch("https://fakestoreapi.com/products");
 
-console.log(posts);
 // export default {
 // 	data() {
 // 		return {
