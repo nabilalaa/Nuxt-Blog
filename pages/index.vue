@@ -16,7 +16,7 @@
 					:key="post"
 					class="lg:w-[60%] lg:h-full w-full h-96"
 					:image="
-						'http://localhost:1337' +
+						'https://blog-backend-strapi.onrender.com' +
 						post.attributes.cover.data[0].attributes.url
 					"
 					:to="`posts/${post.id}`"
@@ -70,7 +70,7 @@
 
 <script setup>
 const { data: posts } = useFetch(
-	"http://localhost:1337/api/blogs?populate=cover",
+	"https://blog-backend-strapi.onrender.com/api/blogs?populate=cover",
 	{
 		transform: (_posts) => _posts.data
 	}

@@ -9,7 +9,7 @@
 			<div>
 				<img
 					:src="
-						'http://localhost:1337' +
+						'https://blog-backend-strapi.onrender.com' +
 						post.attributes.cover.data[0].attributes.url
 					"
 					alt=""
@@ -50,7 +50,7 @@
 
 const { id } = useRoute().params;
 const { data: post } = await useFetch(
-	`http://localhost:1337/api/blogs/1?populate=*`,
+	`https://blog-backend-strapi.onrender.com/api/blogs/1?populate=*`,
 	{
 		lazy: true,
 		key: id,
