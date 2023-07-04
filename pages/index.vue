@@ -6,8 +6,8 @@
 			<h1>{{ post.title }}</h1>
 			<img :src="post.image" alt="" class="w-40" />
 		</div>
-	</section> -->
-	<!-- <section class="py-20">
+	</section>  -->
+	<section class="py-20">
 		<div class="container">
 			<div class="lg:flex gap-4 lg:h-[35rem] h-full">
 				<post
@@ -46,16 +46,24 @@
 				</div>
 			</div>
 		</div>
-	</section> -->
+	</section>
 	<section class="py-20">
 		<div class="container">
 			<div class="grid lg:grid-cols-2 grid-cols-1 gap-4 w-full">
 				<post
 					v-for="post in posts"
 					:key="post"
-					:to="`posts/${post.title}`"
-					:title="post.title"
 					class="h-[400px]"
+					:image="
+						post._embedded['wp:featuredmedia']
+							? post._embedded[
+									'wp:featuredmedia'
+							  ][0].source_url
+							: ''
+					"
+					:to="`posts/${post.slug}`"
+					:title="post.title.rendered"
+					:date="post.date.slice(0, 10)"
 				/>
 			</div>
 		</div>
@@ -64,7 +72,7 @@
 
 <script setup>
 const { data: posts } = useLazyFetch(
-	"https://jsonplaceholder.typicode.com/posts"
+	"https://feline-rail.000webhostapp.com/wp-json/wp/v2/posts?_embed"
 );
 // export default {
 // 	data() {

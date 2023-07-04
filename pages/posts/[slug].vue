@@ -2,8 +2,8 @@
 	<section class="py-24">
 		<div class="container">
 			<!-- <h1>{{ post.data.value.title }}</h1> -->
-			<p v-for="p in post" :key="p">{{ p.body }}</p>
-			<!-- <div v-for="p in post" :key="p">
+			<!-- <p v-for="p in post" :key="p">{{ p.body }}</p> -->
+			<div v-for="p in post" :key="p">
 				<img
 					class="lg:h-96 w-full h-full"
 					:src="
@@ -19,7 +19,7 @@
 					{{ p.date.slice(0, 10) }}
 				</p>
 				<p class="content" v-html="p.content.rendered"></p>
-			</div> -->
+			</div>
 		</div>
 	</section>
 </template>
@@ -49,7 +49,7 @@
 
 const slug = useRoute().params;
 const { data: post } = useLazyFetch(
-	`https://jsonplaceholder.typicode.com/posts?title=${slug.slug}`
+	`https://feline-rail.000webhostapp.com/wp-json/wp/v2/posts?slug=${slug.slug}&_embed`
 );
 
 console.log(post);
