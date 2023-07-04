@@ -7,25 +7,23 @@
 			<img :src="post.image" alt="" class="w-40" />
 		</div>
 	</section>  -->
+	{{ posts }}
 	<section class="py-20">
 		<div class="container">
 			<div class="lg:flex gap-4 lg:h-[35rem] h-full">
 				<post
-					v-for="post in posts.slice(0, 1)"
+					v-for="post in posts"
 					:key="post"
 					class="lg:w-[60%] lg:h-full w-full h-96"
 					:image="
-						post._embedded['wp:featuredmedia']
-							? post._embedded[
-									'wp:featuredmedia'
-							  ][0].source_url
-							: 'https://placehold.co/600x400'
+						'http://localhost:1337' +
+						post.attributes.cover.data[0].attributes.url
 					"
-					:to="`posts/${post.slug}`"
-					:title="post.title.rendered"
-					:date="post.date.slice(0, 10)"
+					:to="`posts/${post.id}`"
+					:title="post.attributes.title"
+					:date="post.attributes.createdAt.slice(0, 10)"
 				/>
-				<div
+				<!-- <div
 					class="lg:flex lg:gap-y-4 lg:flex-col flex-col lg:w-1/2 lg:h-full h-full"
 				>
 					<post
@@ -43,11 +41,11 @@
 						:title="post.title.rendered"
 						:date="post.date.slice(0, 10)"
 					/>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</section>
-	<section class="py-20">
+	<!-- <section class="py-20">
 		<div class="container">
 			<div class="grid lg:grid-cols-2 grid-cols-1 gap-4 w-full">
 				<post
@@ -67,13 +65,19 @@
 				/>
 			</div>
 		</div>
-	</section>
+	</section> -->
 </template>
 
 <script setup>
-const { data: posts } = useLazyFetch(
-	"https://feline-rail.000webhostapp.com/wp-json/wp/v2/posts?_embed"
+const { data: posts } = useFetch(
+	"http://localhost:1337/api/blogs?populate=cover",
+	{
+		transform: (_posts) => _posts.data
+	}
 );
+
+console.log(posts);
+
 // export default {
 // 	data() {
 // 		return {
