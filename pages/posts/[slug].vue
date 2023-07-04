@@ -1,8 +1,10 @@
 <template>
 	<section class="py-24">
 		<div class="container">
-			<!-- <h1>{{ post.data.value.title }}</h1> -->
-			<!-- <p v-for="p in post" :key="p">{{ p.body }}</p> -->
+			<!-- <h1>{{ users[0].title.rendered }}</h1>
+			<p class="content" v-html="users[0].content.rendered"></p> -->
+
+			<!-- <p v-for="p in post" :key="p">{{ p.title.rendered }}</p> -->
 			<div v-for="p in post" :key="p">
 				<img
 					class="lg:h-96 w-full h-full"
@@ -47,12 +49,14 @@
 // }
 // };
 
-const slug = useRoute().params;
-const { data: post } = useLazyFetch(
-	`https://feline-rail.000webhostapp.com/wp-json/wp/v2/posts?slug=${slug.slug}&_embed`
+const { slug } = useRoute().params;
+const { data: post } = await useFetch(
+	`https://feline-rail.000webhostapp.com/wp-json/wp/v2/posts?slug=${slug}&_embed`,
+	{ lazy: true, server: false, key: slug }
 );
-
-console.log(post);
+// const users = await $fetch(
+// 	`https://feline-rail.000webhostapp.com/wp-json/wp/v2/posts?slug=${slug}&_embed`
+// ).catch((error) => error.data);
 </script>
 
 <style>
