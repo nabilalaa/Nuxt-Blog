@@ -7,7 +7,5 @@ export default defineNuxtConfig({
 			autoprefixer: {}
 		}
 	},
-	server: {
-		host: "0" // default: localhost
-	}
+	
 });

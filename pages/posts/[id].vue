@@ -1,12 +1,12 @@
 <template>
 	<section class="py-24">
 		<div class="container">
-			<p>{{ id }}</p>
+			<p></p>
 			<!-- {{ this.post.attributes.title }} -->
 			<!-- <h1>{{ post.attributes.title }}</h1> -->
 			<!-- <p class="content" v-html="users[0].content.rendered"></p> -->
 
-			<div>
+			<!-- <div>
 				<img
 					:src="
 						'https://blog-backend-strapi.onrender.com' +
@@ -19,6 +19,28 @@
 					{{ post.attributes.createdAt.slice(0, 10) }}
 				</p>
 				<p class="content" v-html="post.attributes.content"></p>
+			</div> -->
+			<div v-for="p in post" :key="p">
+				<Meta
+					name="description"
+					:content="p.excerpt.rendered"
+				/>
+				<img
+					:src="
+						p._embedded['wp:featuredmedia']
+							? p._embedded['wp:featuredmedia'][0]
+									.source_url
+							: ''
+					"
+					alt=""
+				/>
+				<h1>{{ p.title.rendered }}</h1>
+				<Title>{{ p.title.rendered }}</Title>
+
+				<p class="my-4">
+					{{ p.date.slice(0, 10) }}
+				</p>
+				<p class="content" v-html="p.content.rendered"></p>
 			</div>
 		</div>
 	</section>
@@ -49,12 +71,19 @@
 // };
 
 const { id } = useRoute().params;
+// const { data: post } = await useFetch(
+// 	`https://blog-backend-strapi.onrender.com/api/blogs/${id}?populate=*`,
+// 	{
+// 		key: id,
+// 		transform: (_posts) => _posts.data
+// 	}
+// );
+
 const { data: post } = await useFetch(
-	`https://blog-backend-strapi.onrender.com/api/blogs/1?populate=*`,
+	`https://feline-rail.000webhostapp.com/wp-json/wp/v2/posts?slug=${id}&_embed`,
 	{
-		lazy: true,
 		key: id,
-		transform: (_posts) => _posts.data
+		server: false
 	}
 );
 
