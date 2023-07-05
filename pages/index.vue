@@ -7,7 +7,6 @@
 			<img :src="post.image" alt="" class="w-40" />
 		</div>
 	</section>  -->
-	{{ posts }}
 	<section class="py-20">
 		<div class="container">
 			<div class="lg:flex gap-4 lg:h-[35rem] h-full">
