@@ -92,7 +92,9 @@
 const { id } = useRoute().params;
 const url = "https://blog-backend-strapi.onrender.com";
 
-const { data: post } = await useFetch(`${url}/api/blogs/${id}?populate=*`, {});
+const { data: post } = await useFetch(`${url}/api/blogs/${id}?populate=*`, {
+	server: false
+});
 
 // const { data: post } = await useFetch(
 // 	`http://localhost:1337/api/blogs/${id}?populate=image`

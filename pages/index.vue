@@ -15,8 +15,11 @@
 					:key="post"
 					class="lg:w-[60%] lg:h-full w-full h-96"
 					:image="
-						url +
-						post.attributes.image.data[0].attributes.url
+						url + post.attributes.image.data[0]
+							? url +
+							  post.attributes.image.data[0]
+									.attributes.url
+							: ''
 					"
 					:to="`posts/${post.id}`"
 					:title="post.attributes.title"
@@ -30,7 +33,7 @@
 						:key="post"
 						class="lg:w-full lg:h-1/2 w-full h-[400px] lg:my-0 my-4"
 						:image="
-							'http://127.0.0.1:1337' +
+							url +
 							post.attributes.image.data[0]
 								.attributes.url
 						"
