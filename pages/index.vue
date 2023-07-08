@@ -15,7 +15,7 @@
 					:key="post"
 					class="lg:w-[60%] lg:h-full w-full h-96"
 					:image="
-						'http://127.0.0.1:1337' +
+						url +
 						post.attributes.image.data[0].attributes.url
 					"
 					:to="`posts/${post.id}`"
@@ -68,9 +68,8 @@
 </template>
 
 <script setup>
-const { data: posts } = await useFetch(
-	"http://127.0.0.1:1337/api/blogs?populate=image"
-);
+const url = "https://blog-backend-strapi.onrender.com";
+const { data: posts } = await useFetch(`${url}/api/blogs?populate=image`);
 // import axios from "axios";
 // export default {
 // 	data() {
