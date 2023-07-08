@@ -11,43 +11,27 @@
 		<div class="container">
 			<div class="lg:flex gap-4 lg:h-[35rem] h-full">
 				<post
-					v-for="post in posts?.slice(0, 1)"
+					v-for="post in posts.data.slice(0, 1)"
 					:key="post"
 					class="lg:w-[60%] lg:h-full w-full h-96"
 					:image="
-						post._embedded['wp:featuredmedia']
-							? post._embedded[
-									'wp:featuredmedia'
-							  ][0].source_url
-							: ''
-					"
-					:to="`posts/${post.slug}`"
-					:title="post.title.rendered"
-					:date="post.date.slice(0, 10)"
-				/>
-
-				<!-- <post
-					v-for="post in posts?.slice(0, 1)"
-					:key="post"
-					class="lg:w-[60%] lg:h-full w-full h-96"
-					:image="
-						'https://blog-backend-strapi.onrender.com' +
-						post.attributes.cover.data[0].attributes.url
+						'http://127.0.0.1:1337' +
+						post.attributes.image.data[0].attributes.url
 					"
 					:to="`posts/${post.id}`"
 					:title="post.attributes.title"
 					:date="post.attributes.createdAt.slice(0, 10)"
-				/> -->
+				/>
 				<div
 					class="lg:flex lg:gap-y-4 lg:flex-col flex-col lg:w-1/2 lg:h-full h-full"
 				>
-					<!-- <post
-						v-for="post in posts?.slice(1, 3)"
+					<post
+						v-for="post in posts.data.slice(1, 3)"
 						:key="post"
 						class="lg:w-full lg:h-1/2 w-full h-[400px] lg:my-0 my-4"
 						:image="
-							'https://blog-backend-strapi.onrender.com' +
-							post.attributes.cover.data[0]
+							'http://127.0.0.1:1337' +
+							post.attributes.image.data[0]
 								.attributes.url
 						"
 						:to="`posts/${post.id}`"
@@ -55,21 +39,6 @@
 						:date="
 							post.attributes.createdAt.slice(0, 10)
 						"
-					/> -->
-					<post
-						v-for="post in posts?.slice(1, 3)"
-						:key="post"
-						class="lg:w-full lg:h-1/2 w-full h-[400px] lg:my-0 my-4"
-						:image="
-							post._embedded['wp:featuredmedia']
-								? post._embedded[
-										'wp:featuredmedia'
-								  ][0].source_url
-								: ''
-						"
-						:to="`posts/${post.slug}`"
-						:title="post.title.rendered"
-						:date="post.date.slice(0, 10)"
 					/>
 				</div>
 			</div>
@@ -99,20 +68,10 @@
 </template>
 
 <script setup>
-// const { data: posts } = useFetch(
-// 	"https://blog-backend-strapi.onrender.com/api/blogs?populate=cover",
-// 	{
-// 		transform: (_posts) => _posts.data
-// 	}
-// );
-const { data: posts } = useFetch(
-	"https://feline-rail.000webhostapp.com/wp-json/wp/v2/posts?_embed",
-	{
-		transform: (_posts) => _posts
-	}
+const { data: posts } = await useFetch(
+	"http://127.0.0.1:1337/api/blogs?populate=image"
 );
-console.log(posts);
-
+// import axios from "axios";
 // export default {
 // 	data() {
 // 		return {
@@ -120,12 +79,12 @@ console.log(posts);
 // 		};
 // 	},
 // 	mounted() {
-// 		axios.get(
-// 			"https://feline-rail.000webhostapp.com/wp-json/wp/v2/posts?_embed"
-// 		).then((response) => {
-// 			this.posts = response.data;
-// 			console.log(response.data);
-// 		});
+// 		axios.get("http://localhost:1337/api/blogs?populate=image").then(
+// 			(response) => {
+// 				this.posts = response.data;
+// 				console.log(response.data);
+// 			}
+// 		);
 // 	}
 // };
 </script>

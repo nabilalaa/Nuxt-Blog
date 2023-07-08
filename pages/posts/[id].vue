@@ -1,10 +1,29 @@
 <template>
 	<section class="py-24">
 		<div class="container">
-			<p></p>
+			<article>
+				<!-- {{ post }} -->
+				<nuxt-img
+					fit="cover"
+					width="940"
+					height="480"
+					sizes="sm:355px md:320px lg:480px"
+					class="m-auto mb-10"
+					:src="
+						'http://127.0.0.1:1337' +
+						post.data.attributes.image.data[0]
+							.attributes.url
+					"
+					alt=""
+				/>
+				<h1>{{ post.data.attributes.title }}</h1>
+
+				<p class="content">
+					{{ post.data.attributes.content }}
+				</p>
+			</article>
 			<!-- {{ this.post.attributes.title }} -->
 			<!-- <h1>{{ post.attributes.title }}</h1> -->
-			<!-- <p class="content" v-html="users[0].content.rendered"></p> -->
 
 			<!-- <div>
 				<img
@@ -20,7 +39,7 @@
 				</p>
 				<p class="content" v-html="post.attributes.content"></p>
 			</div> -->
-			<div v-for="p in post" :key="p">
+			<!-- <div v-for="p in post" :key="p">
 				<Meta
 					name="description"
 					:content="p.excerpt.rendered"
@@ -41,7 +60,7 @@
 					{{ p.date.slice(0, 10) }}
 				</p>
 				<p class="content" v-html="p.content.rendered"></p>
-			</div>
+			</div> -->
 		</div>
 	</section>
 </template>
@@ -49,45 +68,38 @@
 <script setup>
 // import axios from "axios";
 // export default {
-// 	mounted() {
+// 	created() {
 // 		this.getPost();
 // 	},
 // 	methods: {
 // 		getPost() {
 // 			axios.get(
-// 				`http://localhost:1337/api/blogs[slug][$eq]=${this.slug.slug}`
+// 				`http://localhost:1337/api/blogs/${this.id.id}?populate=image`
 // 			).then((response) => {
-// 				this.post = response.data.data[0];
-// 				console.log(response.data.data[0]);
+// 				this.post = response.data.data;
+// 				console.log(response.data.data);
 // 			});
 // 		}
 // 	},
 // 	data() {
 // 		return {
-// 			slug: this.$route.params,
-// 			post: ""
+// 			id: this.$route.params,
+// 			post: []
 // 		};
 // 	}
 // };
 
 const { id } = useRoute().params;
-// const { data: post } = await useFetch(
-// 	`https://blog-backend-strapi.onrender.com/api/blogs/${id}?populate=*`,
-// 	{
-// 		key: id,
-// 		transform: (_posts) => _posts.data
-// 	}
-// );
-
 const { data: post } = await useFetch(
-	`https://feline-rail.000webhostapp.com/wp-json/wp/v2/posts?slug=${id}&_embed`,
-	{
-		key: id,
-		server: false
-	}
+	`http://127.0.0.1:1337/api/blogs/${id}?populate=*`,
+	{}
 );
 
-console.log(post);
+// const { data: post } = await useFetch(
+// 	`http://localhost:1337/api/blogs/${id}?populate=image`
+// );
+
+// console.log(post);
 // const users = await $fetch(
 // 	`https://feline-rail.000webhostapp.com/wp-json/wp/v2/posts?slug=${slug}&_embed`
 // ).catch((error) => error.data);
