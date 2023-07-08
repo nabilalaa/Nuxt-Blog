@@ -24,24 +24,13 @@
 	</div>
 </template>
 
-<script>
-export default {
-	props: {
-		image: {
-			type: String,
-			require: false
-		},
-		to: {
-			type: String
-		},
-		title: {
-			type: String
-		},
-		date: {
-			date: String
-		}
-	}
-};
+<script setup>
+const props = defineProps({
+	image: String,
+	to: String,
+	title: String,
+	date: String
+});
 </script>
 
 <style></style>
