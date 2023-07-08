@@ -1,8 +1,9 @@
 <template>
 	<section class="py-24">
 		<div class="container">
-			<article>
-				<!-- {{ post }} -->
+			{{ post }}
+
+			<!-- <article>
 				<nuxt-img
 					fit="cover"
 					width="940"
@@ -21,7 +22,7 @@
 				<p class="content">
 					{{ post.data.attributes.content }}
 				</p>
-			</article>
+			</article> -->
 			<!-- {{ this.post.attributes.title }} -->
 			<!-- <h1>{{ post.attributes.title }}</h1> -->
 
