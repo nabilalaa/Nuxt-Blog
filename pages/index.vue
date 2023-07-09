@@ -10,7 +10,7 @@
 	<section class="py-20">
 		<div class="container">
 			<div class="lg:flex gap-4 lg:h-[35rem] h-full">
-				<post
+				<!-- <post
 					v-for="post in posts.data.slice(0, 1)"
 					:key="post"
 					class="lg:w-[60%] lg:h-full w-full h-96"
@@ -24,7 +24,36 @@
 					:to="`posts/${post.id}`"
 					:title="post.attributes.title"
 					:date="post.attributes.createdAt.slice(0, 10)"
-				/>
+				/> -->
+				<div
+					v-for="post in posts.data.slice(0, 1)"
+					:key="post"
+					:style="{
+						'background-image': `url(${url}${post.attributes.image.data[0].attributes.url})`,
+						'background-size': 'cover',
+						'background-position': 'center'
+					}"
+					class="w-full relative rounded-3xl lg:w-[60%] lg:h-full h-96"
+				>
+					<div
+						class="overlay bg-mainColor opacity-50 w-full h-full rounded-3xl"
+					></div>
+					<div
+						class="content absolute opacity-100 bottom-0 right-0 z-80 w-full p-4"
+					>
+						<h1 class="text-white opacity-100 text-3xl">
+							{{ post.attributes.title }}
+						</h1>
+						<div class="data font-serif text-white">
+							{{ post.attributes.createdAt }}
+						</div>
+						<NuxtLink
+							:to="`posts/${post.id}`"
+							class="block text-white"
+							>click</NuxtLink
+						>
+					</div>
+				</div>
 				<div
 					class="lg:flex lg:gap-y-4 lg:flex-col flex-col lg:w-1/2 lg:h-full h-full"
 				>
