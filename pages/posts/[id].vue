@@ -107,7 +107,7 @@ const { data: post } = await useFetch(`${url}/api/blogs/${id}?populate=*`, {});
 </script>
 
 <style>
-.content ul {
+/* .content ul {
 	list-style-type: disc;
 	list-style-position: inside;
 }
@@ -157,5 +157,5 @@ p {
 
 .content img {
 	width: 50%;
-}
+} */
 </style>
