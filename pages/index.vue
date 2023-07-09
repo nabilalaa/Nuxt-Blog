@@ -57,7 +57,7 @@
 				<div
 					class="lg:flex lg:gap-y-4 lg:flex-col flex-col lg:w-1/2 lg:h-full h-full"
 				>
-					<post
+					<!-- <post
 						v-for="post in posts.data.slice(1, 3)"
 						:key="post"
 						class="lg:w-full lg:h-1/2 w-full h-[400px] lg:my-0 my-4"
@@ -71,7 +71,7 @@
 						:date="
 							post.attributes.createdAt.slice(0, 10)
 						"
-					/>
+					/> -->
 				</div>
 			</div>
 		</div>
