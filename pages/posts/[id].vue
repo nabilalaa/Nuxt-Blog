@@ -1,8 +1,6 @@
 <template>
 	<section class="py-24">
 		<div class="container">
-			{{ post }}
-
 			<!-- <article>
 				<nuxt-img
 					fit="cover"
@@ -90,10 +88,10 @@
 // 	}
 // };
 
-const { id } = useRoute().params;
+const id = useRoute().params.id;
 const url = "https://blog-backend-strapi.onrender.com";
 
-const { data: post } = await useFetch(`${url}/api/blogs/${id}?populate=*`, {});
+const { data: post } = await useFetch(`${url}/api/blogs/${id}`, {});
 
 // const { data: post } = await useFetch(
 // 	`http://localhost:1337/api/blogs/${id}?populate=image`
@@ -105,57 +103,3 @@ const { data: post } = await useFetch(`${url}/api/blogs/${id}?populate=*`, {});
 // ).catch((error) => error.data);
 // const pos = post.value.data[0];
 </script>
-
-<style>
-/* .content ul {
-	list-style-type: disc;
-	list-style-position: inside;
-}
-.content ol {
-	list-style-type: decimal;
-	list-style-position: inside;
-}
-h1 {
-	font-size: 2em;
-	font-weight: bold;
-	margin: 0.67em 0;
-}
-
-h2 {
-	font-size: 1.5em;
-	font-weight: bold;
-	margin: 0.83em 0;
-}
-
-h3 {
-	font-size: 1.17em;
-	font-weight: bold;
-	margin: 1em 0;
-}
-
-h4 {
-	font-size: 1em;
-	font-weight: bold;
-	margin: 1.33em 0;
-}
-
-h5 {
-	font-size: 0.83em;
-	font-weight: bold;
-	margin: 1.67em 0;
-}
-
-h6 {
-	font-size: 0.67em;
-	font-weight: bold;
-	margin: 2.33em 0;
-}
-
-p {
-	margin: 2rem 0;
-}
-
-.content img {
-	width: 50%;
-} */
-</style>

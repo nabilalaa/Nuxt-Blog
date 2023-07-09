@@ -3,7 +3,7 @@
 		:style="{
 			'background-image': `url(${image})`,
 			'background-size': 'cover',
-			'background-position': 'center'
+			'background-position': 'center' 
 		}"
 		class="w-full h-full relative rounded-3xl"
 	>
