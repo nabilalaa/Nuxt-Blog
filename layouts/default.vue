@@ -3,7 +3,7 @@
 	<Navbar />
 	<SideMenu />
 
-	<slot />
+	<slot></slot>
 </template>
 
 <script>
