@@ -9,7 +9,6 @@
 					sizes="sm:355px md:320px lg:480px"
 					class="m-auto mb-10"
 					:src="
-						url +
 						post.data.attributes.image.data[0]
 							.attributes.url
 					"
@@ -90,7 +89,7 @@
 // };
 
 const id = useRoute().params.id;
-const url = "http://127.0.0.1:1337";
+const url = "https://blog-backend-strapi.onrender.com";
 
 const { data: post } = await useFetch(
 	`${url}/api/blogs/${id}?populate=image`,

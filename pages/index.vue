@@ -15,9 +15,8 @@
 					:key="post"
 					class="lg:w-[60%] lg:h-full w-full h-96"
 					:image="
-						url + post.attributes.image.data[0]
-							? url +
-							  post.attributes.image.data[0]
+						post.attributes.image.data[0]
+							? post.attributes.image.data[0]
 									.attributes.url
 							: ''
 					"
@@ -25,35 +24,7 @@
 					:title="post.attributes.title"
 					:date="post.attributes.createdAt.slice(0, 10)"
 				/>
-				<!-- <div
-					v-for="post in posts.data.slice(0, 1)"
-					:key="post"
-					:style="{
-						'background-image': `url(${url}${post.attributes.image.data[0].attributes.url})`,
-						'background-size': 'cover',
-						'background-position': 'center'
-					}"
-					class="w-full relative rounded-3xl lg:w-[60%] lg:h-full h-96"
-				>
-					<div
-						class="overlay bg-mainColor opacity-50 w-full h-full rounded-3xl"
-					></div>
-					<div
-						class="content absolute opacity-100 bottom-0 right-0 z-80 w-full p-4"
-					>
-						<h1 class="text-white opacity-100 text-3xl">
-							{{ post.attributes.title }}
-						</h1>
-						<div class="data font-serif text-white">
-							{{ post.attributes.createdAt }}
-						</div>
-						<NuxtLink
-							:to="`posts/${post.id}`"
-							class="block text-white"
-							>click</NuxtLink
-						>
-					</div>
-				</div> -->
+
 				<div
 					class="lg:flex lg:gap-y-4 lg:flex-col flex-col lg:w-1/2 lg:h-full h-full"
 				>
@@ -62,7 +33,6 @@
 						:key="post"
 						class="lg:w-full lg:h-1/2 w-full h-[400px] lg:my-0 my-4"
 						:image="
-							url +
 							post.attributes.image.data[0]
 								.attributes.url
 						"
@@ -100,11 +70,8 @@
 </template>
 
 <script setup>
-const url = "http://127.0.0.1:1337";
-const { data: posts } = await useFetch(`${url}/api/blogs?populate=image`, {
-	server: false,
-	initialCache: false
-});
+const url = "https://blog-backend-strapi.onrender.com";
+const { data: posts } = await useFetch(`${url}/api/blogs?populate=image`);
 
 // import axios from "axios";
 // export default {
