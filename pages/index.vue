@@ -10,7 +10,7 @@
 	<section class="py-20">
 		<div class="container">
 			<div class="lg:flex gap-4 lg:h-[35rem] h-full">
-				<!-- <post
+				<post
 					v-for="post in posts.data.slice(0, 1)"
 					:key="post"
 					class="lg:w-[60%] lg:h-full w-full h-96"
@@ -24,8 +24,8 @@
 					:to="`posts/${post.id}`"
 					:title="post.attributes.title"
 					:date="post.attributes.createdAt.slice(0, 10)"
-				/> -->
-				<div
+				/>
+				<!-- <div
 					v-for="post in posts.data.slice(0, 1)"
 					:key="post"
 					:style="{
@@ -53,7 +53,7 @@
 							>click</NuxtLink
 						>
 					</div>
-				</div>
+				</div> -->
 				<div
 					class="lg:flex lg:gap-y-4 lg:flex-col flex-col lg:w-1/2 lg:h-full h-full"
 				>
@@ -100,8 +100,12 @@
 </template>
 
 <script setup>
-const url = "https://blog-backend-strapi.onrender.com";
-const { data: posts } = await useFetch(`${url}/api/blogs?populate=image`);
+const url = "http://127.0.0.1:1337";
+const { data: posts } = await useFetch(`${url}/api/blogs?populate=image`, {
+	server: false,
+	initialCache: false
+});
+
 // import axios from "axios";
 // export default {
 // 	data() {

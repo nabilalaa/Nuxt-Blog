@@ -1,7 +1,7 @@
 <template>
 	<section class="py-24">
 		<div class="container">
-			<!-- <article>
+			<article>
 				<nuxt-img
 					fit="cover"
 					width="940"
@@ -17,10 +17,11 @@
 				/>
 				<h1>{{ post.data.attributes.title }}</h1>
 
-				<p class="content">
-					{{ post.data.attributes.content }}
-				</p>
-			</article> -->
+				<div
+					id="content"
+					v-html="post.data.attributes.content"
+				></div>
+			</article>
 			<!-- {{ this.post.attributes.title }} -->
 			<!-- <h1>{{ post.attributes.title }}</h1> -->
 
@@ -89,9 +90,12 @@
 // };
 
 const id = useRoute().params.id;
-const url = "https://blog-backend-strapi.onrender.com";
+const url = "http://127.0.0.1:1337";
 
-const { data: post } = await useFetch(`${url}/api/blogs/${id}`, {});
+const { data: post } = await useFetch(
+	`${url}/api/blogs/${id}?populate=image`,
+	{}
+);
 
 // const { data: post } = await useFetch(
 // 	`http://localhost:1337/api/blogs/${id}?populate=image`
@@ -103,3 +107,67 @@ const { data: post } = await useFetch(`${url}/api/blogs/${id}`, {});
 // ).catch((error) => error.data);
 // const pos = post.value.data[0];
 </script>
+
+<style scoped>
+ul {
+	list-style-type: disc;
+	list-style-position: inside;
+}
+ol {
+	list-style-type: decimal;
+	list-style-position: inside;
+}
+h1 {
+	display: block;
+	font-size: 2em;
+	margin-top: 0.67em;
+	margin-bottom: 0.67em;
+	margin-left: 0;
+	margin-right: 0;
+	font-weight: bold;
+}
+h2 {
+	display: block;
+	font-size: 1.5em;
+	margin-top: 0.83em;
+	margin-bottom: 0.83em;
+	margin-left: 0;
+	margin-right: 0;
+	font-weight: bold;
+}
+h3 {
+	display: block;
+	font-size: 1.17em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	margin-left: 0;
+	margin-right: 0;
+	font-weight: bold;
+}
+h4 {
+	display: block;
+	margin-top: 1.33em;
+	margin-bottom: 1.33em;
+	margin-left: 0;
+	margin-right: 0;
+	font-weight: bold;
+}
+h5 {
+	display: block;
+	font-size: 0.83em;
+	margin-top: 1.67em;
+	margin-bottom: 1.67em;
+	margin-left: 0;
+	margin-right: 0;
+	font-weight: bold;
+}
+h6 {
+	display: block;
+	font-size: 0.67em;
+	margin-top: 2.33em;
+	margin-bottom: 2.33em;
+	margin-left: 0;
+	margin-right: 0;
+	font-weight: bold;
+}
+</style>
