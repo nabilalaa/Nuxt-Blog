@@ -91,10 +91,4 @@ const { data: posts } = await useFetch(`${url}/api/blogs?populate=image`);
 // };
 </script>
 
-<style>
-@import url("https://fonts.googleapis.com/earlyaccess/droidarabickufi.css");
-body {
-	background: #e2ffdb;
-	font-family: "Droid Arabic Kufi", serif;
-}
-</style>
+<style></style>

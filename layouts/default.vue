@@ -10,4 +10,10 @@
 export default {};
 </script>
 
-<style></style>
+<style>
+@import url("https://fonts.googleapis.com/earlyaccess/droidarabickufi.css");
+body {
+	background: #e2ffdb;
+	font-family: "Droid Arabic Kufi", serif;
+}
+</style>
