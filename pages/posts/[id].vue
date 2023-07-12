@@ -2,6 +2,13 @@
 	<section class="py-24">
 		<div class="container">
 			<article>
+				<h1 class="text-center">
+					{{ post.data.attributes.title }}
+				</h1>
+				<p class="text-center my-8">
+					{{ post.data.attributes.createdAt.slice(0, 10) }}
+				</p>
+
 				<nuxt-img
 					fit="cover"
 					width="940"
@@ -14,7 +21,6 @@
 					"
 					alt=""
 				/>
-				<h1>{{ post.data.attributes.title }}</h1>
 
 				<div
 					id="content"
