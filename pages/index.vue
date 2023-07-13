@@ -1,13 +1,7 @@
 <template>
-	<!-- const { data: posts } = useFetch("https://fakestoreapi.com/products");
+	<section v-if="pending">loading</section>
 
-	<section class="grid grid-cols-3 gap-4">
-		<div v-for="post in posts" :key="post">
-			<h1>{{ post.title }}</h1>
-			<img :src="post.image" alt="" class="w-40" />
-		</div>
-	</section>  -->
-	<section class="py-20">
+	<section class="py-20" v-else>
 		<div class="container">
 			<div class="lg:flex gap-4 lg:h-[35rem] h-full">
 				<post
@@ -71,9 +65,12 @@
 
 <script setup>
 const url = "https://blog-backend-strapi.onrender.com";
-const { data: posts } = await useFetch(`${url}/api/blogs?populate=image`, {
-	lazy: true
-});
+const { data: posts, pending } = await useFetch(
+	`${url}/api/blogs?populate=image`,
+	{
+		lazy: true
+	}
+);
 
 // import axios from "axios";
 // export default {
