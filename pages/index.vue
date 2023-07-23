@@ -1,11 +1,14 @@
 <template>
+	<PageLoader />
+
 	<section v-if="pending">loading</section>
+	<section v-if="error">error</section>
 
 	<section class="py-20" v-else>
 		<div class="container">
 			<div class="lg:flex gap-4 lg:h-[35rem] h-full">
 				<post
-					v-for="post in posts"
+					v-for="post in posts.data.slice(0, 1)"
 					:key="post"
 					class="lg:w-[60%] lg:h-full w-full h-96"
 					:image="
@@ -63,46 +66,42 @@
 	</section> -->
 </template>
 
-<script>
-// if (process.browser) {
-// 	window.onload = function () {
-// 		const url = "https://blog-backend-strapi.onrender.com";
-// 		const { data: posts, pending } = useFetch(
-// 			`${url}/api/blogs?populate=image`,
-// 			{
-// 				lazy: true,
-// 				mode: client
-// 			}
-// 		);
-// 	};
-// }
+<script setup>
+const url = "https://blog-backend-strapi.onrender.com";
+const {
+	data: posts,
+	pending,
+	error
+} = useFetch(`${url}/api/blogs?populate=image`, {
+	lazy: true
+});
 
-import axios from "axios";
-export default {
-	data() {
-		return {
-			posts: []
-		};
-	},
-	methods: {
-		async getposts() {
-			await axios
-				.get(
-					"https://blog-backend-strapi.onrender.com/api/blogs?populate=image"
-				)
-				.then((response) => {
-					this.posts = response.data.data;
-					console.log(response.data);
-				});
-			document.body.style.overflow = "auto";
-			document.querySelector(".loading").style.display = "none";
-		}
-	},
-	mounted() {
-		document.body.style.overflow = "hidden";
-		window.addEventListener("load", this.getposts());
-	}
-};
+// import axios from "axios";
+// export default {
+// 	data() {
+// 		return {
+// 			posts: []
+// 		};
+// 	},
+// 	methods: {
+// 		async getposts() {
+// 			await axios
+// 				.get(
+// 					"https://blog-backend-strapi.onrender.com/api/blogs?populate=image"
+// 				)
+// 				.then((response) => {
+// 					this.posts = response.data.data;
+// 					console.log(response.data);
+// 				});
+// 			document.body.style.overflow = "auto";
+// 			document.querySelector(".loading").style.display = "none";
+// 		}
+// 	},
+// 	mounted() {
+// 		document.body.style.overflow = "hidden";
+// 		window.addEventListener("load", this.getposts());
+// 	}
+// };
 </script>
 
 <style></style>
