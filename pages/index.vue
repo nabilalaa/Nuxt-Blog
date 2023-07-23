@@ -1,8 +1,5 @@
 <template>
-	<PageLoader />
-
 	<section v-if="pending">loading</section>
-	<section v-if="error">error</section>
 
 	<section class="py-20" v-else>
 		<div class="container">

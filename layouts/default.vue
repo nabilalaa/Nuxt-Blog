@@ -1,4 +1,6 @@
 <template>
+	<PageLoader />
+
 	<!-- <div
 		ref="loading"
 		class="loading h-full w-full bg-black absolute z-50 overflow-auto flex justify-center items-center text-white font-bold font-sans"
