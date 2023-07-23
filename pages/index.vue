@@ -5,7 +5,7 @@
 		<div class="container">
 			<div class="lg:flex gap-4 lg:h-[35rem] h-full">
 				<post
-					v-for="post in posts.data.slice(0, 1)"
+					v-for="post in posts"
 					:key="post"
 					class="lg:w-[60%] lg:h-full w-full h-96"
 					:image="
@@ -22,7 +22,7 @@
 				<div
 					class="lg:flex lg:gap-y-4 lg:flex-col flex-col lg:w-1/2 lg:h-full h-full"
 				>
-					<post
+					<!-- <post
 						v-for="post in posts.data.slice(1, 3)"
 						:key="post"
 						class="lg:w-full lg:h-1/2 w-full h-[400px] lg:my-0 my-4"
@@ -35,7 +35,7 @@
 						:date="
 							post.attributes.createdAt.slice(0, 10)
 						"
-					/>
+					/> -->
 				</div>
 			</div>
 		</div>
@@ -63,31 +63,46 @@
 	</section> -->
 </template>
 
-<script setup>
-const url = "https://blog-backend-strapi.onrender.com";
-const { data: posts, pending } = await useFetch(
-	`${url}/api/blogs?populate=image`,
-	{
-		lazy: true
-	}
-);
-
-// import axios from "axios";
-// export default {
-// 	data() {
-// 		return {
-// 			posts: []
-// 		};
-// 	},
-// 	mounted() {
-// 		axios.get("http://localhost:1337/api/blogs?populate=image").then(
-// 			(response) => {
-// 				this.posts = response.data;
-// 				console.log(response.data);
+<script>
+// if (process.browser) {
+// 	window.onload = function () {
+// 		const url = "https://blog-backend-strapi.onrender.com";
+// 		const { data: posts, pending } = useFetch(
+// 			`${url}/api/blogs?populate=image`,
+// 			{
+// 				lazy: true,
+// 				mode: client
 // 			}
 // 		);
-// 	}
-// };
+// 	};
+// }
+
+import axios from "axios";
+export default {
+	data() {
+		return {
+			posts: []
+		};
+	},
+	methods: {
+		async getposts() {
+			await axios
+				.get(
+					"https://blog-backend-strapi.onrender.com/api/blogs?populate=image"
+				)
+				.then((response) => {
+					this.posts = response.data.data;
+					console.log(response.data);
+				});
+			document.body.style.overflow = "auto";
+			document.querySelector(".loading").style.display = "none";
+		}
+	},
+	mounted() {
+		document.body.style.overflow = "hidden";
+		window.addEventListener("load", this.getposts());
+	}
+};
 </script>
 
 <style></style>
