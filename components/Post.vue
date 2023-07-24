@@ -17,7 +17,7 @@
 				<h1 class="text-white opacity-100 text-3xl">
 					{{ title }}
 				</h1>
-				<div class="data font-serif text-white"></div>
+				<div class="data font-serif text-white">{{ date }}</div>
 			</div>
 		</div>
 	</NuxtLink>

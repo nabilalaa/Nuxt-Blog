@@ -69,8 +69,6 @@ const { data: posts, pending } = useFetch(`${url}/api/blogs?populate=image`, {
 	lazy: true
 });
 
-console.log(data);
-
 // import axios from "axios";
 // export default {
 // 	data() {
