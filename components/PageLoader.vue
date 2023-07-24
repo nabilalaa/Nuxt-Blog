@@ -40,13 +40,20 @@
 </template>
 
 <script>
-// import axios from "axios";
+import axios from "axios";
 export default {
 	name: "pageLoader",
 	methods: {
 		loading() {
-			document.body.style.overflow = "auto";
-			document.querySelector(".loader").style.display = "none";
+			axios.get(
+				"https://blog-backend-strapi.onrender.com/api/blogs?populate=image"
+			).then((response) => {
+				if (response) {
+					document.querySelector(".loader").style.display =
+						"none";
+					document.body.style.overflow = "auto";
+				}
+			});
 		}
 	},
 	mounted() {
