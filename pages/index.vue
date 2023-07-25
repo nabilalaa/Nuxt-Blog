@@ -1,5 +1,6 @@
 <template>
 	<section v-if="pending">loading</section>
+	<section v-if="error">loading</section>
 
 	<section class="py-20" v-else>
 		<div class="container">
@@ -66,7 +67,11 @@
 
 <script setup>
 const url = "https://blog-backend-strapi.onrender.com";
-const { data: posts, pending } = useFetch(`${url}/api/blogs?populate=image`, {
+const {
+	data: posts,
+	pending,
+	error
+} = useFetch(`${url}/api/blogs?populate=image`, {
 	lazy: true
 });
 
