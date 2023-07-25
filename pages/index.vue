@@ -1,6 +1,6 @@
 <template>
 	<section v-if="pending">loading</section>
-	<section v-if="error">loading</section>
+	<section v-else-if="error">loading</section>
 
 	<section class="py-20" v-else>
 		<div class="container">
