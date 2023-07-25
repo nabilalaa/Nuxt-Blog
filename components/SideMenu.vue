@@ -1,20 +1,18 @@
 <template>
 	<div
 		id="sidemenu"
-		class="sidemenu bg-accent z-50 fixed h-full bottom-0 top-0 w-72 -left-72 lg:left-0 lg:fixed lg:hidden overflow-hidden transition-all"
+		class="sidemenu bg-accent z-50 fixed h-full bottom-0 top-0 w-full sm:w-72 -left-full lg:left-0 lg:fixed lg:hidden transition-all"
 	>
 		<div
-			class="closemenu w-7 h-7 bg-white lg:hidden absolute right-0 flex justify-center items-center"
+			class="closemenu w-12 h-12 bg-white lg:hidden -right-0 z-[9999999999999px] flex justify-center items-center text-3xl"
 			@click="closeMenu"
 		>
-			X
+			<Icon
+				name="radix-icons:cross-2"
+				class="pointer-events-none"
+			/>
 		</div>
-		<div
-			class="logo font-logo font-bold tracking-wider text-xl space-x-2 uppercase p-4 text-center"
-		>
-			oscar
-		</div>
-		<hr />
+
 		<ul class="links p-4 text-white">
 			<NuxtLink
 				v-for="link in links"

@@ -22,45 +22,46 @@
 				<div
 					class="lg:flex lg:gap-y-4 lg:flex-col flex-col lg:w-1/2 lg:h-full h-full"
 				>
-					<!-- <post
+					<post
 						v-for="post in posts.data.slice(1, 3)"
 						:key="post"
 						class="lg:w-full lg:h-1/2 w-full h-[400px] lg:my-0 my-4"
 						:image="
 							post.attributes.image.data[0]
-								.attributes.url
+								? post.attributes.image.data[0]
+										.attributes.url
+								: ''
 						"
 						:to="`posts/${post.id}`"
 						:title="post.attributes.title"
 						:date="
 							post.attributes.createdAt.slice(0, 10)
 						"
-					/> -->
+					/>
 				</div>
 			</div>
 		</div>
 	</section>
-	<!-- <section class="py-20">
+	<section class="py-20">
 		<div class="container">
 			<div class="grid lg:grid-cols-2 grid-cols-1 gap-4 w-full">
 				<post
-					v-for="post in posts"
+					v-for="post in posts.data.slice(3)"
 					:key="post"
-					class="h-[400px]"
+					class="lg:w-full lg:h-1/2 w-full h-[400px] lg:my-0 my-4"
 					:image="
-						post._embedded['wp:featuredmedia']
-							? post._embedded[
-									'wp:featuredmedia'
-							  ][0].source_url
+						post.attributes.image.data[0]
+							? post.attributes.image.data[0]
+									.attributes.url
 							: ''
 					"
-					:to="`posts/${post.slug}`"
-					:title="post.title.rendered"
-					:date="post.date.slice(0, 10)"
+					:to="`posts/${post.id}`"
+					:title="post.attributes.title"
+					:date="post.attributes.createdAt.slice(0, 10)"
 				/>
 			</div>
 		</div>
-	</section> -->
+	</section>
 </template>
 
 <script setup>

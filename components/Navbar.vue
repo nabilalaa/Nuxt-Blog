@@ -10,13 +10,15 @@
 				>
 					مدونة
 				</div>
-
 				<div
-					id="btn_sideBar"
-					class="btn_sideBar text-2xl lg:hidden"
 					@click="showMenu"
+					id="sidemenu_btn"
+					class="lg:hidden text-4xl"
 				>
-					XX
+					<Icon
+						name="material-symbols:menu"
+						class="pointer-events-none"
+					/>
 				</div>
 			</div>
 			<ul class="lg:flex hidden justify-center text-black">
@@ -47,6 +49,11 @@
 
 <script>
 export default {
+	data() {
+		return {
+			menu: "<Icon name='uil:github'/>"
+		};
+	},
 	methods: {
 		showMenu() {
 			document
@@ -55,16 +62,17 @@ export default {
 		}
 	},
 	mounted() {
-		document.onclick = (e) => {
-			if (
-				e.target.id !== "btn_sideBar" &&
-				e.target.id !== "sidemenu"
-			) {
-				document
-					.querySelector(".sidemenu")
-					.classList.remove("active");
-			}
-		};
+		// document.onclick = (e) => {
+		// 	if (
+		// 		e.target.id !== "sidemenu" &&
+		// 		e.target.id !== "sidemenu_btn"
+		// 	) {
+		// 		document
+		// 			.querySelector(".sidemenu")
+		// 			.classList.remove("active");
+		// 	}
+		// 	console.log(e.target);
+		// };
 	}
 };
 </script>

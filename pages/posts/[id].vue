@@ -23,7 +23,7 @@
 				/>
 
 				<div
-					id="content"
+					class="content"
 					v-html="post.data.attributes.content"
 				></div>
 			</article>
@@ -32,29 +32,6 @@
 </template>
 
 <script setup>
-// import axios from "axios";
-// export default {
-// 	created() {
-// 		this.getPost();
-// 	},
-// 	methods: {
-// 		getPost() {
-// 			axios.get(
-// 				`http://localhost:1337/api/blogs/${this.id.id}?populate=image`
-// 			).then((response) => {
-// 				this.post = response.data.data;
-// 				console.log(response.data.data);
-// 			});
-// 		}
-// 	},
-// 	data() {
-// 		return {
-// 			id: this.$route.params,
-// 			post: []
-// 		};
-// 	}
-// };
-
 const id = useRoute().params.id;
 const url = "https://blog-backend-strapi.onrender.com";
 
@@ -122,5 +99,9 @@ h6 {
 	margin-left: 0;
 	margin-right: 0;
 	font-weight: bold;
+}
+
+figure img {
+	width: 50% !important;
 }
 </style>
