@@ -45,16 +45,15 @@ export default {
 	name: "pageLoader",
 	methods: {
 		loading() {
-			axios.get("https://blog-backend-strapi.onrender.com").then(
-				(response) => {
-					if (response) {
-						document.querySelector(
-							".loader"
-						).style.display = "none";
-						document.body.style.overflow = "auto";
-					}
-				}
-			);
+			// axios.get("https://blog-backend-strapi.onrender.com").then(
+			// 	(response) => {
+			// 		if (response) {
+			//
+			// 		}
+			// 	}
+			// );
+			document.querySelector(".loader").style.display = "none";
+			document.body.style.overflow = "auto";
 		}
 	},
 	mounted() {
