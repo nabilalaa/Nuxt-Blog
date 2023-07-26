@@ -24,7 +24,7 @@
 			<ul class="lg:flex hidden justify-center text-black">
 				<li>
 					<NuxtLink
-						to="/"
+						@click="navigateTo('/')"
 						class="p-2 ml-6 opacity-80 font-bold hover:opacity-100 transition-opacity"
 					>
 						الصفحة الرئيسية</NuxtLink

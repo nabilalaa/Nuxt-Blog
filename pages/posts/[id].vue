@@ -3,29 +3,13 @@
 		<div class="container">
 			<article>
 				<h1 class="text-center">
-					{{ post.data.attributes.title }}
+					{{ post[0].title }}
 				</h1>
 				<p class="text-center my-8">
-					{{ post.data.attributes.createdAt.slice(0, 10) }}
+					{{ post[0].created_at.slice(0, 10) }}
 				</p>
 
-				<nuxt-img
-					fit="cover"
-					width="940"
-					height="480"
-					sizes="sm:355px md:320px lg:480px"
-					class="m-auto mb-12 lg:w-1/2"
-					:src="
-						post.data.attributes.image.data[0]
-							.attributes.url
-					"
-					alt=""
-				/>
-
-				<div
-					class="content"
-					v-html="post.data.attributes.content"
-				></div>
+				<div class="content" v-html="post[0].content"></div>
 			</article>
 		</div>
 	</section>
@@ -33,9 +17,9 @@
 
 <script setup>
 const id = useRoute().params.id;
-const url = "https://blog-backend-strapi.onrender.com";
+// const url = "https://blog-backend-strapi.onrender.com";
 
-const { data: post } = await useFetch(`${url}/api/blogs/${id}?populate=image`);
+const { data: post } = await useFetch(`/api/articles/${id}`);
 </script>
 
 <style scoped>
