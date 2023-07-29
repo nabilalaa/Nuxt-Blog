@@ -8,7 +8,7 @@
 				<nuxt-img
 					format="webp"
 					sizes="sm:100vw md:50vw lg:400px"
-					class="mx-auto h-[499px] object-cover"
+					class="mx-auto lg:h-[499px] object-cover"
 					:src="p.image_url"
 					alt=""
 				/>
