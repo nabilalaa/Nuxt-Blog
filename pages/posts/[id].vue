@@ -16,7 +16,7 @@
 					alt=""
 				/>
 
-				<div class="content" v-html="p.content"></div>
+				<div class="content mt-10" v-html="p.content"></div>
 				<Title>{{ p.title }}</Title>
 				<Meta name="description" :content="p.title" />
 			</article>
