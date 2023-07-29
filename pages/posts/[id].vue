@@ -5,6 +5,9 @@
 				<h1 class="text-center">
 					{{ p.title }}
 				</h1>
+				<p class="text-center my-8">
+					{{ p.created_at.slice(0, 10) }}
+				</p>
 				<nuxt-img
 					format="webp"
 					sizes="sm:100vw md:50vw lg:400px"
@@ -12,9 +15,6 @@
 					:src="p.image_url"
 					alt=""
 				/>
-				<p class="text-center my-8">
-					{{ p.created_at.slice(0, 10) }}
-				</p>
 
 				<div class="content" v-html="p.content"></div>
 				<Title>{{ p.title }}</Title>
