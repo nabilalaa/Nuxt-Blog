@@ -10,6 +10,7 @@
 					:key="post"
 					class="lg:w-[60%] lg:h-full w-full h-96"
 					:to="`posts/${post.id}`"
+					:image="post.image_url"
 					:title="post.title"
 					:date="post.created_at.slice(0, 10)"
 				/>
@@ -22,6 +23,7 @@
 						:key="post"
 						class="lg:w-full lg:h-1/2 w-full h-[400px] lg:my-0 my-4"
 						:to="`posts/${post.id}`"
+						:image="post.image_url"
 						:title="post.title"
 						:date="post.created_at.slice(0, 10)"
 					/>
@@ -35,8 +37,9 @@
 				<post
 					v-for="post in posts.blogs.slice(3)"
 					:key="post"
-					class="lg:w-full lg:h-1/2 w-full h-[400px] lg:my-0 my-4"
+					class="lg:w-full lg:h-[400px] w-full h-[400px] lg:my-0 my-4"
 					:to="`posts/${post.id}`"
+					:image="post.image_url"
 					:title="post.title"
 					:date="post.created_at.slice(0, 10)"
 				/>

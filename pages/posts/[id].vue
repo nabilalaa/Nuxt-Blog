@@ -1,15 +1,24 @@
 <template>
 	<section class="py-24">
 		<div class="container">
-			<article>
+			<article v-for="p in post" :key="p">
 				<h1 class="text-center">
-					{{ post[0].title }}
+					{{ p.title }}
 				</h1>
+				<nuxt-img
+					format="webp"
+					sizes="sm:100vw md:50vw lg:400px"
+					class="mx-auto h-[499px] object-cover"
+					:src="p.image_url"
+					alt=""
+				/>
 				<p class="text-center my-8">
-					{{ post[0].created_at.slice(0, 10) }}
+					{{ p.created_at.slice(0, 10) }}
 				</p>
 
-				<div class="content" v-html="post[0].content"></div>
+				<div class="content" v-html="p.content"></div>
+				<Title>{{ p.title }}</Title>
+				<Meta name="description" :content="p.title" />
 			</article>
 		</div>
 	</section>
