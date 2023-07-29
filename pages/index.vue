@@ -1,6 +1,5 @@
 <template>
 	<section v-if="pending">loading</section>
-	<section v-else-if="error">loading</section>
 
 	<section class="py-20" v-else>
 		<div class="container">
@@ -37,7 +36,7 @@
 				<post
 					v-for="post in posts.blogs.slice(3)"
 					:key="post"
-					class="lg:w-full lg:h-[400px] w-full h-[400px] lg:my-0 my-4"
+					class="lg:w-full w-full h-[400px] lg:my-0 my-4"
 					:to="`posts/${post.id}`"
 					:image="post.image_url"
 					:title="post.title"
@@ -50,13 +49,7 @@
 
 <script setup>
 // const url = "https://blog-backend-strapi.onrender.com";
-const {
-	data: posts,
-	pending,
-	error
-} = useFetch(`/api/articles`, {
-	lazy: true
-});
+const { data: posts, pending, error } = useFetch(`/api/articles`);
 
 // import axios from "axios";
 // export default {

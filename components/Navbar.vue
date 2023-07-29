@@ -24,7 +24,7 @@
 			<ul class="lg:flex hidden justify-center text-black">
 				<li>
 					<NuxtLink
-						@click="navigateTo('/')"
+						to="/"
 						class="p-2 ml-6 opacity-80 font-bold hover:opacity-100 transition-opacity"
 					>
 						الصفحة الرئيسية</NuxtLink
@@ -32,12 +32,14 @@
 				</li>
 				<li>
 					<NuxtLink
+						to="contact"
 						class="p-2 ml-6 opacity-80 font-bold hover:opacity-100 transition-opacity"
 						>اتصل بنا</NuxtLink
 					>
 				</li>
 				<li>
 					<NuxtLink
+						to="about"
 						class="p-2 opacity-80 font-bold hover:opacity-100 transition-opacity"
 						>عنا</NuxtLink
 					>
