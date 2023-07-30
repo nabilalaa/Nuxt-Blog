@@ -49,9 +49,7 @@
 </template>
 
 <script setup>
-const { data: posts } = await useAsyncData("posts", () =>
-	$fetch("/api/articles")
-);
+const posts = await $fetch("/api/articles");
 </script>
 
 <style></style>
