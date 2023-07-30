@@ -1,7 +1,5 @@
 <template>
-	<section v-if="pending">loading</section>
-
-	<section class="py-20" v-else>
+	<section class="py-20">
 		<div class="container">
 			<!-- {{ posts }} -->
 			<div class="lg:flex gap-4 lg:h-[35rem] h-full">
