@@ -49,7 +49,7 @@
 
 <script setup>
 // const url = "https://blog-backend-strapi.onrender.com";
-const { data: posts, pending, error } = useFetch(`/api/articles`);
+const { data: posts, pending } = useFetch(`/api/articles`);
 
 // import axios from "axios";
 // export default {
