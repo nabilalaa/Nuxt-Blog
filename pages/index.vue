@@ -3,6 +3,7 @@
 
 	<section class="py-20" v-else>
 		<div class="container">
+			<!-- {{ posts }} -->
 			<div class="lg:flex gap-4 lg:h-[35rem] h-full">
 				<post
 					v-for="post in posts.blogs.slice(0, 1)"
@@ -48,35 +49,7 @@
 </template>
 
 <script setup>
-// const url = "https://blog-backend-strapi.onrender.com";
-const { data: posts, pending } = useFetch(`/api/articles`);
-
-// import axios from "axios";
-// export default {
-// 	data() {
-// 		return {
-// 			posts: []
-// 		};
-// 	},
-// 	methods: {
-// 		async getposts() {
-// 			await axios
-// 				.get(
-// 					"https://blog-backend-strapi.onrender.com/api/blogs?populate=image"
-// 				)
-// 				.then((response) => {
-// 					this.posts = response.data.data;
-// 					console.log(response.data);
-// 				});
-// 			document.body.style.overflow = "auto";
-// 			document.querySelector(".loading").style.display = "none";
-// 		}
-// 	},
-// 	mounted() {
-// 		document.body.style.overflow = "hidden";
-// 		window.addEventListener("load", this.getposts());
-// 	}
-// };
+const posts = await $fetch(`/api/articles`);
 </script>
 
 <style></style>

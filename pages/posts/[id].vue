@@ -26,26 +26,25 @@
 
 <script setup>
 const id = useRoute().params.id;
-// const url = "https://blog-backend-strapi.onrender.com";
 
 const { data: post } = await useFetch(`/api/articles/${id}`);
 </script>
 
 <style scoped>
 ul {
-	list-style-type: disc;
-	list-style-position: inside;
+	list-style-type: disc !important;
+	list-style-position: inside !important;
 }
 ol {
-	list-style-type: decimal;
-	list-style-position: inside;
+	list-style-type: decimal !important;
+	list-style-position: inside !important;
 }
 h1 {
-	display: block;
-	font-size: 2em;
-	margin-top: 0.67em;
-	margin-bottom: 0.67em;
-	margin-left: 0;
+	display: block !important;
+	font-size: 2em !important;
+	margin-top: 0.67em !important;
+	margin-bottom: 0.67em !important;
+	margin-left: 0 !important;
 	margin-right: 0;
 	font-weight: bold;
 }
@@ -85,13 +84,13 @@ h5 {
 	font-weight: bold;
 }
 h6 {
-	display: block;
-	font-size: 0.67em;
-	margin-top: 2.33em;
-	margin-bottom: 2.33em;
-	margin-left: 0;
-	margin-right: 0;
-	font-weight: bold;
+	display: block !important;
+	font-size: 0.67em !important;
+	margin-top: 2.33em !important;
+	margin-bottom: 2.33em !important;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+	font-weight: bold !important;
 }
 
 figure img {
