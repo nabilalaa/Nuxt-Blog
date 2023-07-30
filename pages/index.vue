@@ -49,9 +49,9 @@
 </template>
 
 <script setup>
-const { data: posts } = await useLazyFetch(`/api/articles`, {
-	pick: ["blogs"]
-});
+const { data: posts } = await useAsyncData("posts", () =>
+	$fetch("/api/articles")
+);
 </script>
 
 <style></style>
