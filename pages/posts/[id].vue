@@ -25,75 +25,12 @@
 </template>
 
 <script setup>
+import axios from "axios";
 const id = useRoute().params.id;
-
-const { data: post } = await useFetch(`/api/articles/${id}`);
+// const post = ref(null);
+const post = await $fetch(`/api/articles/${id}`);
+// axios.get(`/api/articles/${id}`).then((res) => {
+// 	console.log(res.data);
+// 	post.value = res.data;
+// });
 </script>
-
-<style scoped>
-ul {
-	list-style-type: disc !important;
-	list-style-position: inside !important;
-}
-ol {
-	list-style-type: decimal !important;
-	list-style-position: inside !important;
-}
-h1 {
-	display: block !important;
-	font-size: 2em !important;
-	margin-top: 0.67em !important;
-	margin-bottom: 0.67em !important;
-	margin-left: 0 !important;
-	margin-right: 0;
-	font-weight: bold;
-}
-h2 {
-	display: block;
-	font-size: 1.5em;
-	margin-top: 0.83em;
-	margin-bottom: 0.83em;
-	margin-left: 0;
-	margin-right: 0;
-	font-weight: bold;
-}
-h3 {
-	display: block;
-	font-size: 1.17em;
-	margin-top: 1em;
-	margin-bottom: 1em;
-	margin-left: 0;
-	margin-right: 0;
-	font-weight: bold;
-}
-h4 {
-	display: block;
-	margin-top: 1.33em;
-	margin-bottom: 1.33em;
-	margin-left: 0;
-	margin-right: 0;
-	font-weight: bold;
-}
-h5 {
-	display: block;
-	font-size: 0.83em;
-	margin-top: 1.67em;
-	margin-bottom: 1.67em;
-	margin-left: 0;
-	margin-right: 0;
-	font-weight: bold;
-}
-h6 {
-	display: block !important;
-	font-size: 0.67em !important;
-	margin-top: 2.33em !important;
-	margin-bottom: 2.33em !important;
-	margin-left: 0 !important;
-	margin-right: 0 !important;
-	font-weight: bold !important;
-}
-
-figure img {
-	width: 50% !important;
-}
-</style>
