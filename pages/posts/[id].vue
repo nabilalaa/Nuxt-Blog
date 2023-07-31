@@ -27,10 +27,10 @@
 <script setup>
 import axios from "axios";
 const id = useRoute().params.id;
-// const post = ref(null);
-const post = await $fetch(`/api/articles/${id}`);
-// axios.get(`/api/articles/${id}`).then((res) => {
-// 	console.log(res.data);
-// 	post.value = res.data;
-// });
+const post = ref(null);
+// const post = await $fetch(`/api/articles/${id}`);
+axios.get(`/api/articles/${id}`).then((res) => {
+	console.log(res.data);
+	post.value = res.data;
+});
 </script>
