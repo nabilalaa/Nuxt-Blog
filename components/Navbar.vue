@@ -39,7 +39,7 @@
 				</li>
 				<li>
 					<NuxtLink
-						to="about"
+						@click="navigateTo('about')"
 						class="p-2 opacity-80 font-bold hover:opacity-100 transition-opacity"
 						>عنا</NuxtLink
 					>
