@@ -45,11 +45,11 @@ export default {
 				},
 				{
 					name: "اتصل بنا",
-					to: "contact"
+					to: "/contact"
 				},
 				{
 					name: "عنا",
-					to: "about"
+					to: "/about"
 				}
 			]
 			// [("الصفحة الرئيسية", "اتصل بنا", "عنا")]

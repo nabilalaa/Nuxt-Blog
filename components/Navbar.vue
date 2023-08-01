@@ -32,14 +32,14 @@
 				</li>
 				<li>
 					<NuxtLink
-						to="contact"
+						to="/contact"
 						class="p-2 ml-6 opacity-80 font-bold hover:opacity-100 transition-opacity"
 						>اتصل بنا</NuxtLink
 					>
 				</li>
 				<li>
 					<NuxtLink
-						@click="navigateTo('about')"
+						to="/about"
 						class="p-2 opacity-80 font-bold hover:opacity-100 transition-opacity"
 						>عنا</NuxtLink
 					>
