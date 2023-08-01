@@ -33,8 +33,9 @@ import axios from "axios";
 const id = useRoute().params.id;
 const post = ref(null);
 onMounted(async () => {
-	const article = await $fetch(`/api/articles/${id}`);
-	post.value = article;
+	await $fetch(`/api/articles/${id}`).then((response) => {
+		post.value = response;
+	});
 });
 
 // axios.get(`/api/articles/${id}`).then((res) => {
