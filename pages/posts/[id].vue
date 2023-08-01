@@ -31,8 +31,11 @@
 <script setup>
 import axios from "axios";
 const id = useRoute().params.id;
-// const post = ref(null);
-const post = await $fetch(`/api/articles/${id}`);
+const post = ref(null);
+onMounted(async () => {
+	const article = await $fetch(`/api/articles/${id}`);
+	post.value = article;
+});
 
 // axios.get(`/api/articles/${id}`).then((res) => {
 // 	console.log(res.data);
