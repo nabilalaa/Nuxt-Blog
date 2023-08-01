@@ -29,7 +29,6 @@
 </template>
 
 <script setup>
-import axios from "axios";
 const id = useRoute().params.id;
 const post = ref(null);
 onMounted(async () => {

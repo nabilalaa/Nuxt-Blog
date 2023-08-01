@@ -27,8 +27,19 @@ export default defineNuxtConfig({
 				process.env.NUXT_PUBLIC_SITE_URL ||
 				"https://blog-0-0.netlify.app",
 			siteName: "Free For All ",
-			siteDescription: "Welcome to my awesome site!",
+			siteDescription:
+				"موقع يختص بإشعارك بكل ما هو مجاني على الانترنت",
 			language: "ar"
+		}
+	},
+	app: {
+		head: {
+			meta: [
+				{
+					name: "google-site-verification",
+					content: "b71UVrFPw3ZPCuYp"
+				}
+			]
 		}
 	}
 });
