@@ -5,7 +5,7 @@
 				class="about-content bg-mainColor bg-opacity-50 p-8 text-center text-white"
 			>
 				<h3>من نحن</h3>
-				<p class="py-6"></p>
+				<p class="py-6">قناة تختص بإشعارك بكل ما هو مجاني على الانترنت</p>
 				<div class="about-social">
 					<a
 						href="https://t.me/+GkLJbiVX_kVkODc0"
