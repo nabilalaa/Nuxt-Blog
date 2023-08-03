@@ -1,7 +1,6 @@
 <template>
 	<section class="py-20">
 		<div class="container">
-			<!-- {{ posts }} -->
 			<div class="lg:flex gap-4 lg:h-[35rem] h-full">
 				<post
 					v-for="post in posts.blogs.slice(0, 1)"
@@ -63,11 +62,8 @@ const more = () => {
 	if (pag.value == posts.blogs.length) {
 		morebtn.value = false;
 	} else {
-		pag.value += 1;
+		pag.value += 8;
 	}
-
-	// console.log(posts.blogs.length);
-	// console.log(pag.value);
 };
 </script>
 
