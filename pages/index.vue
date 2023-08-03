@@ -33,7 +33,7 @@
 		<div class="container">
 			<div class="grid lg:grid-cols-2 grid-cols-1 gap-4 w-full">
 				<post
-					v-for="post in posts.blogs.slice(3)"
+					v-for="post in posts.blogs.slice(3, pag)"
 					:key="post"
 					class="lg:w-full w-full h-[400px] lg:my-0 my-4"
 					:to="`posts/${post.id}`"
@@ -42,12 +42,23 @@
 					:date="post.created_at.slice(0, 10)"
 				/>
 			</div>
+			<button
+				@click="more"
+				class="outline-none flex justify-center items-center text-white bg-accent p-4 font-bold m-auto mt-8"
+			>
+				المزيد
+			</button>
 		</div>
 	</section>
 </template>
 
 <script setup>
 const posts = await $fetch("/api/articles");
+
+const pag = ref(7);
+const more = () => {
+	pag.value += 8;
+};
 </script>
 
 <style></style>
