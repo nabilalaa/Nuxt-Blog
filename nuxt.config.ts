@@ -39,6 +39,14 @@ export default defineNuxtConfig({
 					name: "google-site-verification",
 					content: "b71UVrFPw3ZPCuYp5Qsu6jDgdq2LA8Amuyp0j0uRCmY"
 				}
+			],
+			script: [
+				{
+					async: true,
+					src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6052257709634296",
+					crossorigin: "anonymous",
+					body: true
+				}
 			]
 		}
 	}
