@@ -43,6 +43,7 @@
 				/>
 			</div>
 			<button
+				v-show="morebtn"
 				@click="more"
 				class="outline-none flex justify-center items-center text-white bg-accent p-4 font-bold m-auto mt-8"
 			>
@@ -55,9 +56,18 @@
 <script setup>
 const posts = await $fetch("/api/articles");
 
+const morebtn = ref(true);
 const pag = ref(7);
+
 const more = () => {
-	pag.value += 8;
+	if (pag.value == posts.blogs.length) {
+		morebtn.value = false;
+	} else {
+		pag.value += 1;
+	}
+
+	// console.log(posts.blogs.length);
+	// console.log(pag.value);
 };
 </script>
 

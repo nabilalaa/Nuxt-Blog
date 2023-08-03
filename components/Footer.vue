@@ -1,22 +1,24 @@
 <template>
 	<footer
-		class="flex justify-between bg-accent p-8 text-white items-center"
+		class="flex sm:justify-between sm:flex-row flex-col justify-center bg-accent p-6 text-white items-center flex-wrap"
 	>
 		<div class="logo">
 			<div
-				class="logo font-logo font-bold tracking-wider text-xl space-x-2 uppercase text-mainColor"
+				class="logo font-logo font-bold tracking-wider text-xl space-x-2 uppercase text-white"
 			>
 				مدونة
 			</div>
 		</div>
-		<ul class="links font-bold">
-			<li class="mb-4">
+		<ul
+			class="links font-bold my-12 sm:m-0 flex flex-col sm:items-start items-center"
+		>
+			<li>
 				<NuxtLink to="/">الصفحة الرئيسية</NuxtLink>
 			</li>
-			<li class="mb-4">
+			<li class="my-4">
 				<NuxtLink to="/contact"> اتصل بنا</NuxtLink>
 			</li>
-			<li class="mb-4"><NuxtLink to="/about"> عنا</NuxtLink></li>
+			<li><NuxtLink to="/about"> عنا</NuxtLink></li>
 		</ul>
 		<ul class="social">
 			<li>
