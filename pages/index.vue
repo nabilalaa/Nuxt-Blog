@@ -59,7 +59,7 @@ const morebtn = ref(true);
 const pag = ref(7);
 
 const more = () => {
-	if (pag.value == posts.blogs.length) {
+	if (pag.value > posts.blogs.length) {
 		morebtn.value = false;
 	} else {
 		pag.value += 8;
