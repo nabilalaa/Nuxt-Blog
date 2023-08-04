@@ -53,7 +53,14 @@
 </template>
 
 <script setup>
-const posts = await $fetch("/api/articles");
+// const posts = await $fetch("/api/articles");
+
+// const page = ref(1);
+const { data: posts } = await useLazyAsyncData(
+	"posts",
+	() => $fetch("/api/articles", {}),
+	{}
+);
 
 const morebtn = ref(true);
 const pag = ref(7);
