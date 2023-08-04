@@ -53,7 +53,7 @@
 </template>
 
 <script setup>
-const { data: posts } = useFetch("/api/articles");
+const posts = await $fetch("/api/articles");
 
 const morebtn = ref(true);
 const pag = ref(7);
