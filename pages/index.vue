@@ -61,10 +61,6 @@
 </template>
 
 <script setup>
-if (process.browser) {
-	(adsbygoogle = window.adsbygoogle || []).push({});
-}
-
 const posts = await $fetch("/api/articles");
 
 const morebtn = ref(true);

@@ -38,9 +38,6 @@
 </template>
 
 <script setup>
-if (process.browser) {
-	(adsbygoogle = window.adsbygoogle || []).push({});
-}
 const id = useRoute().params.id;
 const post = ref(null);
 onMounted(async () => {
