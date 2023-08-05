@@ -23,6 +23,6 @@
 @import url("https://fonts.googleapis.com/earlyaccess/droidarabickufi.css");
 body {
 	background: #e2ffdb;
-	font-family: "Droid Arabic Kufi", "Times New Roman";
+	font-family: "Droid Arabic Kufi", system-ui;
 }
 </style>

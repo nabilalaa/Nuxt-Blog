@@ -14,8 +14,8 @@
 	.router-link-exact-active {
 		@apply text-mainColor !important;
 	}
-	.content ~ p {
-		color: aqua;
+	.content p {
+		line-height: 2;
 	}
 	.content img {
 		width: 50% !important;
