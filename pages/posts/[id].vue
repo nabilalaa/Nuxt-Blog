@@ -1,4 +1,13 @@
 <template>
+	<ins
+		class="adsbygoogle"
+		style="display: block"
+		data-ad-client="ca-pub-6052257709634296"
+		data-ad-slot="4020145914"
+		data-ad-format="auto"
+		data-full-width-responsive="true"
+	></ins>
+
 	<section class="py-24">
 		<div class="container">
 			<article v-for="p in post" :key="p">
@@ -29,6 +38,9 @@
 </template>
 
 <script setup>
+if (process.browser) {
+	(adsbygoogle = window.adsbygoogle || []).push({});
+}
 const id = useRoute().params.id;
 const post = ref(null);
 onMounted(async () => {

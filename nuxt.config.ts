@@ -63,6 +63,10 @@ export default defineNuxtConfig({
                     
                     gtag("config", "G-S32GHC4NCX");
                     `
+				},
+				{
+					type: "text/javascript",
+					innerHTML: `(adsbygoogle = window.adsbygoogle || []).push({});`
 				}
 			]
 		}
