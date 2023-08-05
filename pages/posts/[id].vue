@@ -33,14 +33,14 @@
 				<Meta name="description" :content="p.title" />
 			</article>
 		</div>
-		<ins
+		<!-- <ins
 			class="adsbygoogle"
 			style="display: block"
 			data-ad-client="ca-pub-6052257709634296"
 			data-ad-slot="4020145914"
 			data-ad-format="auto"
 			data-full-width-responsive="true"
-		></ins>
+		></ins> -->
 	</section>
 </template>
 
