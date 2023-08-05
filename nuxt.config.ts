@@ -32,10 +32,6 @@ export default defineNuxtConfig({
 			language: "ar"
 		}
 	},
-	robots: {
-		UserAgent: "*",
-		Allow: "/"
-	},
 	app: {
 		head: {
 			meta: [
