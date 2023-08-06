@@ -1,3 +1,8 @@
+User-agent: Mediapartners-Google
+Disallow: 
+
 User-agent: *
+Disallow: /search
 Allow: /
+
 Sitemap: https://blog-0-0.netlify.app/sitemap.xml

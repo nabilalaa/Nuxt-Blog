@@ -6,10 +6,8 @@ export default defineNuxtConfig({
 		"nuxt-icon",
 		"@nuxtjs/supabase",
 		"nuxt-simple-robots"
+		// "nuxt-simple-sitemap"
 	],
-	robots: {
-		allow: "/"
-	},
 	extends: ["nuxt-seo-kit"],
 	postcss: {
 		plugins: {
