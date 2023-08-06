@@ -1,13 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
 	css: ["@/assets/css/main.css"],
-	modules: [
-		"@nuxt/image",
-		"nuxt-icon",
-		"@nuxtjs/supabase"
-		// "nuxt-simple-robots"
-		// "nuxt-simple-sitemap"
-	],
+	modules: ["@nuxt/image", "nuxt-icon", "@nuxtjs/supabase"],
 	extends: ["nuxt-seo-kit"],
 	postcss: {
 		plugins: {
