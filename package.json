@@ -21,6 +21,7 @@
 		"tailwindcss": "^3.3.2"
 	},
 	"dependencies": {
+		"@nuxtjs/robots": "^2.4.2",
 		"axios": "^1.4.0"
 	}
 }
