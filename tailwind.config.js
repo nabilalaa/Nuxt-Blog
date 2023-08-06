@@ -23,6 +23,7 @@ module.exports = {
 				secondaryColor: "#ffffff",
 				accent: "#b20121"
 			}
+            
 		}
 	},
 	plugins: []
