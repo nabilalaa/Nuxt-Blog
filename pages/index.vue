@@ -61,7 +61,11 @@
 </template>
 
 <script setup>
-const posts = await $fetch("/api/articles");
+const posts = await $fetch("/api/articles", {
+	headers: {
+		Authorization: "Nn123123"
+	}
+});
 
 const morebtn = ref(true);
 const pag = ref(7);

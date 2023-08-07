@@ -4,10 +4,16 @@ export default defineEventHandler(async (event) => {
 	const client = serverSupabaseClient(event);
 	const id = event.context.params.id;
 	// console.log(event.context.params.id );
-	let { data: blogs, error } = await client
-		.from("blogs")
-		.select("*")
-		.eq("id", id);
+	if (
+		event.node.req.rawHeaders.find((obj) => {
+			return obj == "Nn123123";
+		})
+	) {
+		let { data: blogs, error } = await client
+			.from("blogs")
+			.select("*")
+			.eq("id", id);
 
-	return blogs;
+		return blogs;
+	}
 });

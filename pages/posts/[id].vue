@@ -48,7 +48,11 @@
 const id = useRoute().params.id;
 const post = ref(null);
 onMounted(async () => {
-	await $fetch(`/api/articles/${id}`).then((response) => {
+	await $fetch(`/api/articles/${id}`, {
+		headers: {
+			Authorization: "Nn123123"
+		}
+	}).then((response) => {
 		post.value = response;
 	});
 });
