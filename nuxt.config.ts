@@ -1,14 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-	css: ["@/assets/css/main.css"],
-	modules: [
-		"@nuxt/image",
-		"nuxt-icon",
-		"@nuxtjs/supabase"
-		// "nuxt-simple-robots",
-		// "nuxt-simple-sitemap"
-	],
+	modules: ["@nuxt/image", "nuxt-icon", "@nuxtjs/supabase"],
 	extends: ["nuxt-seo-kit"],
+	css: ["~/assets/css/main.css"],
 	postcss: {
 		plugins: {
 			tailwindcss: {},
@@ -38,6 +32,7 @@ export default defineNuxtConfig({
 			language: "ar"
 		}
 	},
+
 	app: {
 		head: {
 			meta: [
