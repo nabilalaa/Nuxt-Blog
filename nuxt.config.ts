@@ -1,7 +1,18 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-	modules: ["@nuxt/image", "nuxt-icon", "@nuxtjs/supabase"],
+	modules: [
+		"@nuxt/image",
+		"nuxt-icon",
+		"@nuxtjs/supabase",
+		"nuxt-simple-robots"
+	],
 	extends: ["nuxt-seo-kit"],
+	robots: {
+		// provide simple disallow rules for all robots `user-agent: *`
+
+		allow: ["/"],
+		mergeWithRobotsTxtPath: "robots.txt"
+	},
 	css: ["~/assets/css/main.css"],
 	postcss: {
 		plugins: {
