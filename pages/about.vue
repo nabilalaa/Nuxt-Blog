@@ -1,5 +1,5 @@
 <template>
-	<section class="about py-28">
+	<section class="about py-28 h-screen flex justify-center items-center">
 		<div class="container">
 			<div
 				class="about-content bg-mainColor bg-opacity-50 p-8 text-center text-white"

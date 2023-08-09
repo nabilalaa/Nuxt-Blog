@@ -40,7 +40,7 @@
 		<div class="container">
 			<div class="grid lg:grid-cols-2 grid-cols-1 gap-4 w-full">
 				<post
-					v-for="post in posts.blogs.slice(3, pag)"
+					v-for="post in posts.blogs.slice(3)"
 					:key="post"
 					class="lg:w-full w-full h-[400px] lg:my-0 my-4"
 					:to="`posts/${post.id}`"
@@ -49,13 +49,13 @@
 					:date="post.created_at.slice(0, 10)"
 				/>
 			</div>
-			<button
+			<!-- <button
 				v-show="morebtn"
 				@click="more"
 				class="outline-none flex justify-center items-center text-white bg-accent p-4 font-bold m-auto mt-8"
 			>
 				المزيد
-			</button>
+			</button> -->
 		</div>
 	</section>
 </template>
