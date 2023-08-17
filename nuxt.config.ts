@@ -4,7 +4,8 @@ export default defineNuxtConfig({
 		"@nuxt/image",
 		"nuxt-icon",
 		"@nuxtjs/supabase",
-		"nuxt-simple-robots"
+		"nuxt-simple-robots",
+		"nuxt-simple-sitemap"
 	],
 	extends: ["nuxt-seo-kit"],
 	robots: {
