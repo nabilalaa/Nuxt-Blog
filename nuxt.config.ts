@@ -60,23 +60,6 @@ export default defineNuxtConfig({
 					body: true
 				},
 				{
-					async: true,
-					src: "https://www.googletagmanager.com/gtag/js?id=G-S32GHC4NCX",
-					body: true
-				},
-				{
-					type: "text/javascript",
-					innerHTML: `
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag() {
-                        dataLayer.push(arguments);
-                    }
-                    gtag("js", new Date());
-                    
-                    gtag("config", "G-S32GHC4NCX");
-                    `
-				},
-				{
 					type: "text/javascript",
 					innerHTML: `(adsbygoogle = window.adsbygoogle || []).push({});`
 				}
