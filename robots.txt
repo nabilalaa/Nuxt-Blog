@@ -1,4 +1,0 @@
-User-agent: *
-Disallow:
-
-Sitemap: https://blog-0-0.netlify.app/sitemap.xml
