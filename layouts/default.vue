@@ -4,7 +4,7 @@
 		name="description"
 		content="موقع يختص بإشعارك بكل ما هو مجاني على الانترنت"
 	/>
-	<!-- <SeoKit /> -->
+	<SeoKit />
 	<PageLoader />
 	<Html lang="ar" dir="rtl"></Html>
 

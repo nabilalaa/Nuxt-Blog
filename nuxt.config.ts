@@ -1,17 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-	// extends: ["nuxt-seo-kit"],
+	extends: ["nuxt-seo-kit"],
 
 	modules: [
 		"@nuxt/image",
 		"nuxt-icon",
 		"@nuxtjs/supabase",
-		"@nuxtjs/robots",
-		"nuxt-simple-sitemap"
+		"@nuxtjs/robots"
 	],
-	site: {
-		url: "https://blog-0-0.netlify.app"
-	},
+
 	css: ["~/assets/css/main.css"],
 	postcss: {
 		plugins: {
@@ -31,6 +28,17 @@ export default defineNuxtConfig({
 			"2xl": 1536
 		}
 	},
+	// seo: {
+	// 	// My custom configuration
+	// 	baseUrl: "https://blog-0-0.netlify.app",
+	// 	name: "Free For All",
+	// 	title: "Free For All",
+	// 	templateTitle: "%name% - %title%",
+	// 	description: "موقع يختص بإشعارك بكل ما هو مجاني على الانترنت",
+	// 	keywords: "كورسات, مجاني, العاب",
+	// 	canonical: "auto",
+	// 	isForcedTrailingSlash: false
+	// },
 	runtimeConfig: {
 		public: {
 			siteUrl:
