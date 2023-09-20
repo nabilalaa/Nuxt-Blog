@@ -7,7 +7,7 @@
 		data-ad-format="auto"
 		data-full-width-responsive="true"
 	></ins> -->
-    
+
 	<section class="py-20">
 		<div class="container">
 			<div class="lg:flex gap-4 lg:h-[35rem] h-full">

@@ -7,8 +7,8 @@
 		data-ad-format="auto"
 		data-full-width-responsive="true"
 	></ins> -->
-	<section class="py-24">
-		<div class="container">
+	<section class="py-20">
+		<div class="container max-w-screen-md p-4">
 			<article v-for="p in post" :key="p">
 				<h1 class="text-center">
 					{{ p.title }}

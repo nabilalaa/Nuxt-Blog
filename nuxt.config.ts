@@ -6,8 +6,12 @@ export default defineNuxtConfig({
 		"@nuxt/image",
 		"nuxt-icon",
 		"@nuxtjs/supabase",
-		"@nuxtjs/robots"
+		"@nuxtjs/robots",
+		"nuxt-simple-sitemap"
 	],
+	site: {
+		url: "https://blog-0-0.netlify.app"
+	},
 
 	css: ["~/assets/css/main.css"],
 	postcss: {
