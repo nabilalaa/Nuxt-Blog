@@ -7,7 +7,7 @@ export default defineEventHandler(async (event) => {
 	console.log(event);
 	return posts.blogs.map((p) => {
 		return {
-			loc: `${event.context.siteConfigNitroOrigin}posts/${p.id}`,
+			loc: `https://blog-0-0.netlify.app/posts/${p.id}`,
 			lastmod: p.created_at
 		};
 	});
