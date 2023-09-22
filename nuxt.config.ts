@@ -61,6 +61,10 @@ export default defineNuxtConfig({
 				{
 					name: "google-site-verification",
 					content: "b71UVrFPw3ZPCuYp5Qsu6jDgdq2LA8Amuyp0j0uRCmY"
+				},
+				{
+					name: "robots",
+					content: "nofollow"
 				}
 			],
 			script: []
