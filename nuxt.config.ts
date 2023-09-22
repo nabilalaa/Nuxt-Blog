@@ -64,7 +64,7 @@ export default defineNuxtConfig({
 				},
 				{
 					name: "robots",
-					content: "nofollow"
+					content: "follow"
 				}
 			],
 			script: []
