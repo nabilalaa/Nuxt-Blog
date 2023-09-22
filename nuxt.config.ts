@@ -43,17 +43,17 @@ export default defineNuxtConfig({
 	// 	canonical: "auto",
 	// 	isForcedTrailingSlash: false
 	// },
-	runtimeConfig: {
-		public: {
-			siteUrl:
-				process.env.NUXT_PUBLIC_SITE_URL ||
-				"https://blog-0-0.netlify.app",
-			siteName: "Free For All ",
-			siteDescription:
-				"موقع يختص بإشعارك بكل ما هو مجاني على الانترنت",
-			language: "ar"
-		}
-	},
+	// runtimeConfig: {
+	// 	public: {
+	// 		siteUrl:
+	// 			process.env.NUXT_PUBLIC_SITE_URL ||
+	// 			"https://blog-0-0.netlify.app",
+	// 		siteName: "Free For All ",
+	// 		siteDescription:
+	// 			"موقع يختص بإشعارك بكل ما هو مجاني على الانترنت",
+	// 		language: "ar"
+	// 	}
+	// },
 
 	app: {
 		head: {
