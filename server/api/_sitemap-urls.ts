@@ -7,7 +7,7 @@ export default defineEventHandler(async (event) => {
 	console.log(event);
 	return posts.blogs.map((p) => {
 		return {
-			loc: `${event.context.siteConfigNitroOrigin}${p.id}`,
+			loc: `${event.context.siteConfigNitroOrigin}posts/${p.id}`,
 			lastmod: p.created_at
 		};
 	});
