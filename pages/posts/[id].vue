@@ -31,6 +31,10 @@
 				<div class="content mt-10" v-html="p.content"></div>
 				<Title>{{ p.title }}</Title>
 				<Meta name="description" :content="p.title" />
+				<Link
+					rel="canonical"
+					:href="`https://blog-0-0.netlify.app/posts/${p.id}`"
+				/>
 			</article>
 		</div>
 		<!-- <ins
@@ -45,6 +49,19 @@
 </template>
 
 <script setup>
+// useHead({
+// 	link: [
+// 		{
+// 			rel: "canonical",
+//             href:"https://blog-0-0.netlify.app/posts/${p.id}"
+//             	},
+// 		{
+// 			rel: "stylesheet",
+// 			href: "https://fonts.googleapis.com/css2?family=Roboto&display=swap",
+// 			crossorigin: ""
+// 		}
+// 	]
+// });
 const id = useRoute().params.id;
 const post = ref(null);
 onMounted(async () => {

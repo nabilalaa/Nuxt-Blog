@@ -67,7 +67,13 @@ export default defineNuxtConfig({
 					content: "follow"
 				}
 			],
-			script: []
+			script: [],
+			link: [
+				{
+					rel: "canonical",
+					href: "https://blog-0-0.netlify.app"
+				}
+			]
 		}
 	}
 });
