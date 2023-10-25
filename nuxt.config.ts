@@ -7,18 +7,18 @@ export default defineNuxtConfig({
 		"nuxt-icon",
 		"@nuxtjs/supabase",
 		"@nuxtjs/robots",
-		"nuxt-simple-sitemap"
+		"nuxt-simple-sitemap",
 	],
 	site: {
-		url: "https://blog-0-0.netlify.app"
+		url: "https://blog-0-0.netlify.app",
 	},
 
 	css: ["~/assets/css/main.css"],
 	postcss: {
 		plugins: {
 			tailwindcss: {},
-			autoprefixer: {}
-		}
+			autoprefixer: {},
+		},
 	},
 	image: {
 		// The screen sizes predefined by `@nuxt/image`:
@@ -29,8 +29,11 @@ export default defineNuxtConfig({
 			lg: 1024,
 			xl: 1280,
 			xxl: 1536,
-			"2xl": 1536
-		}
+			"2xl": 1536,
+		},
+	},
+	sitemap: {
+		sitemapName: "my_sitemap.xml",
 	},
 	// seo: {
 	// 	// My custom configuration
@@ -60,14 +63,13 @@ export default defineNuxtConfig({
 			meta: [
 				{
 					name: "google-site-verification",
-					content: "b71UVrFPw3ZPCuYp5Qsu6jDgdq2LA8Amuyp0j0uRCmY"
+					content: "b71UVrFPw3ZPCuYp5Qsu6jDgdq2LA8Amuyp0j0uRCmY",
 				},
 				{
 					name: "robots",
-					content: "follow"
-				}
+					content: "follow",
+				},
 			],
-			
-		}
-	}
+		},
+	},
 });
