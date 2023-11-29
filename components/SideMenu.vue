@@ -7,22 +7,19 @@
 			class="closemenu w-12 h-12 bg-white lg:hidden -right-0 z-[9999999999999px] flex justify-center items-center text-3xl"
 			@click="closeMenu"
 		>
-			<Icon
-				name="radix-icons:cross-2"
-				class="pointer-events-none"
-			/>
+			<Icon name="radix-icons:cross-2" class="pointer-events-none" />
 		</div>
 
 		<ul class="links p-4 text-white">
-			<NuxtLink
-				v-for="link in links"
-				:key="link"
-				:to="link.to"
-				@click="closeMenu"
-				class="text-secondaryColor flex p-4 rounded-xl mb-2 font-bold"
-			>
-				<li class="">{{ link.name }}</li>
-			</NuxtLink>
+			<li v-for="link in links" :key="link">
+				<NuxtLink
+					:to="link.to"
+					@click="closeMenu"
+					class="text-secondaryColor flex p-4 rounded-xl mb-2 font-bold"
+				>
+					<li class="">{{ link.name }}</li>
+				</NuxtLink>
+			</li>
 		</ul>
 	</div>
 </template>
@@ -31,30 +28,28 @@
 export default {
 	methods: {
 		closeMenu() {
-			document
-				.querySelector(".sidemenu")
-				.classList.remove("active");
-		}
+			document.querySelector(".sidemenu").classList.remove("active");
+		},
 	},
 	data() {
 		return {
 			links: [
 				{
 					name: "الصفحة الرئيسية",
-					to: "/"
+					to: "/",
 				},
 				{
 					name: "اتصل بنا",
-					to: "/contact"
+					to: "/contact",
 				},
 				{
 					name: "عنا",
-					to: "/about"
-				}
-			]
+					to: "/about",
+				},
+			],
 			// [("الصفحة الرئيسية", "اتصل بنا", "عنا")]
 		};
-	}
+	},
 };
 </script>
 
