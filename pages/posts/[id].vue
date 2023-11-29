@@ -20,11 +20,7 @@
 					format="webp"
 					sizes="sm:100vw md:50vw lg:400px"
 					class="mx-auto lg:h-[499px] object-cover"
-					:src="
-						p.image_url
-							? p.image_url
-							: 'https://placehold.co/600x400'
-					"
+					:src="p.image_url ? p.image_url : 'https://placehold.co/600x400'"
 					alt=""
 				/>
 
@@ -64,13 +60,11 @@
 // });
 const id = useRoute().params.id;
 const post = ref(null);
-onMounted(async () => {
-	await $fetch(`/api/articles/${id}`, {
-		headers: {
-			Authorization: "Nn123123"
-		}
-	}).then((response) => {
-		post.value = response;
-	});
+await $fetch(`/api/articles/${id}`, {
+	headers: {
+		Authorization: "Nn123123",
+	},
+}).then((response) => {
+	post.value = response;
 });
 </script>

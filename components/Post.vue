@@ -1,13 +1,11 @@
 <template>
 	<NuxtLink :to="to" class="block text-white">
-		<div
-			:style="{
-				'background-image': `url(${image})`,
-				'background-size': 'cover',
-				'background-position': 'center',
-			}"
-			class="w-full h-full relative rounded-3xl"
-		>
+		<div class="w-full h-full relative rounded-3xl">
+			<NuxtImg
+				format="webp"
+				:src="image"
+				class="w-full h-full object-cover absolute"
+			/>
 			<div
 				class="overlay bg-mainColor opacity-50 w-full h-full rounded-3xl"
 			></div>
