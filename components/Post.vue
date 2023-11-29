@@ -3,8 +3,10 @@
 		<div class="w-full h-full relative rounded-3xl">
 			<NuxtImg
 				format="webp"
+				sizes="sm:100vw md:50vw lg:400px"
 				:src="image"
 				class="w-full h-full object-cover absolute"
+				:alt="title"
 			/>
 			<div
 				class="overlay bg-mainColor opacity-50 w-full h-full rounded-3xl"

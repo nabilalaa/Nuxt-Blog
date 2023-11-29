@@ -15,7 +15,7 @@
 				<NuxtLink
 					:to="link.to"
 					@click="closeMenu"
-					class="text-secondaryColor flex p-4 rounded-xl mb-2 font-bold"
+					class="flex p-4 rounded-xl mb-2 font-bold"
 				>
 					<li class="">{{ link.name }}</li>
 				</NuxtLink>

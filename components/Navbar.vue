@@ -1,24 +1,14 @@
 <template>
-	<SideMenu />
 	<nav class="w-full p-8">
 		<div class="container">
-			<div
-				class="flex justify-between lg:justify-center items-center mb-16"
-			>
+			<div class="flex justify-between lg:justify-center items-center mb-16">
 				<div
 					class="logo font-logo font-bold tracking-wider text-xl space-x-2 uppercase text-mainColor"
 				>
 					مدونة
 				</div>
-				<div
-					@click="showMenu"
-					id="sidemenu_btn"
-					class="lg:hidden text-4xl"
-				>
-					<Icon
-						name="material-symbols:menu"
-						class="pointer-events-none"
-					/>
+				<div @click="showMenu" id="sidemenu_btn" class="lg:hidden text-4xl">
+					<Icon name="material-symbols:menu" class="pointer-events-none" />
 				</div>
 			</div>
 			<ul class="lg:flex hidden justify-center text-black">
@@ -53,15 +43,13 @@
 export default {
 	data() {
 		return {
-			menu: "<Icon name='uil:github'/>"
+			menu: "<Icon name='uil:github'/>",
 		};
 	},
 	methods: {
 		showMenu() {
-			document
-				.querySelector(".sidemenu")
-				.classList.toggle("active");
-		}
+			document.querySelector(".sidemenu").classList.toggle("active");
+		},
 	},
 	mounted() {
 		// document.onclick = (e) => {
@@ -75,7 +63,7 @@ export default {
 		// 	}
 		// 	console.log(e.target);
 		// };
-	}
+	},
 };
 </script>
 

@@ -23,7 +23,7 @@
 					width=""
 					class="mx-auto lg:h-[499px] object-cover"
 					:src="p.image_url ? p.image_url : 'https://placehold.co/600x400'"
-					alt=""
+					:alt="p.title"
 				/>
 
 				<div class="content mt-10" v-html="p.content"></div>
