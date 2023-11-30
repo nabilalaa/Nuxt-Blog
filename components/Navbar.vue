@@ -1,4 +1,5 @@
 <template>
+	<SideMenu />
 	<nav class="w-full p-8">
 		<div class="container">
 			<div class="flex justify-between lg:justify-center items-center mb-16">

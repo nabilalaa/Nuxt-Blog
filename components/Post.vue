@@ -1,10 +1,18 @@
 <template>
 	<NuxtLink :to="to" class="block text-white">
 		<div class="w-full h-full relative rounded-3xl">
-			<NuxtImg
+			<!-- <NuxtImg
 				provider="cloudinary"
 				format="webp"
-				sizes="sm:100vw md:50vw lg:400px"
+				sizes="sm:500px"
+				:src="image.slice(50)"
+				class="w-full h-full object-cover absolute"
+				:alt="title"
+			/> -->
+			<CldImage
+				width="800"
+				height="600"
+				quality="200"
 				:src="image.slice(50)"
 				class="w-full h-full object-cover absolute"
 				:alt="title"

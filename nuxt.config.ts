@@ -8,7 +8,11 @@ export default defineNuxtConfig({
 		"@nuxtjs/robots",
 		"nuxt-simple-sitemap",
 		"@nuxtseo/module",
+		"@nuxtjs/cloudinary",
 	],
+	cloudinary: {
+		cloudName: "dnru0whph",
+	},
 	site: {
 		url: "https://blog-0-0.netlify.app",
 		name: "Free For All",
