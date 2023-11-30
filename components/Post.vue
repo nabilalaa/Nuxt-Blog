@@ -12,7 +12,6 @@
 			<CldImage
 				width="800"
 				height="600"
-				aspectRatio="0/0"
 				:src="image.slice(50)"
 				class="w-full h-full object-cover absolute rounded-3xl"
 				:alt="title"
