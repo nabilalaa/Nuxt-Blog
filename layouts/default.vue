@@ -3,6 +3,7 @@
 	<Html lang="ar" dir="rtl"></Html>
 
 	<Navbar />
+	<SideMenu />
 
 	<slot></slot>
 	<Footer />

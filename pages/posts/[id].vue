@@ -31,7 +31,7 @@
 				/> -->
 				<CldImage
 					aspectRatio="0/0"
-					width="auto"
+					width="700"
 					height="auto"
 					class="mx-auto md:!w-72 object-cover"
 					sizes="sm:100vw, md:500px"

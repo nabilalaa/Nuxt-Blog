@@ -1,5 +1,4 @@
 <template>
-	<SideMenu />
 	<nav class="w-full p-8">
 		<div class="container">
 			<div class="flex justify-between lg:justify-center items-center mb-16">
@@ -51,19 +50,6 @@ export default {
 		showMenu() {
 			document.querySelector(".sidemenu").classList.toggle("active");
 		},
-	},
-	mounted() {
-		// document.onclick = (e) => {
-		// 	if (
-		// 		e.target.id !== "sidemenu" &&
-		// 		e.target.id !== "sidemenu_btn"
-		// 	) {
-		// 		document
-		// 			.querySelector(".sidemenu")
-		// 			.classList.remove("active");
-		// 	}
-		// 	console.log(e.target);
-		// };
 	},
 };
 </script>

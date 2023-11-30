@@ -17,7 +17,7 @@
 					@click="closeMenu"
 					class="flex p-4 rounded-xl mb-2 font-bold"
 				>
-					<li class="">{{ link.name }}</li>
+					{{ link.name }}
 				</NuxtLink>
 			</li>
 		</ul>
