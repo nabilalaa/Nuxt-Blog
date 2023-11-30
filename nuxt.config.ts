@@ -1,6 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-	// extends: ["nuxt-seo-kit"],
 	ssr: true,
 	modules: [
 		"@nuxt/image",
@@ -8,9 +7,13 @@ export default defineNuxtConfig({
 		"@nuxtjs/supabase",
 		"@nuxtjs/robots",
 		"nuxt-simple-sitemap",
+		"@nuxtseo/module",
 	],
 	site: {
 		url: "https://blog-0-0.netlify.app",
+		name: "Free For All",
+		description: "موقع يختص بإشعارك بكل ما هو مجاني على الانترنت",
+		defaultLocale: "ar",
 	},
 
 	css: ["~/assets/css/main.css"],
@@ -35,28 +38,6 @@ export default defineNuxtConfig({
 	sitemap: {
 		sitemapName: "my_sitemap.xml",
 	},
-	// seo: {
-	// 	// My custom configuration
-	// 	baseUrl: "https://blog-0-0.netlify.app",
-	// 	name: "Free For All",
-	// 	title: "Free For All",
-	// 	templateTitle: "%name% - %title%",
-	// 	description: "موقع يختص بإشعارك بكل ما هو مجاني على الانترنت",
-	// 	keywords: "كورسات, مجاني, العاب",
-	// 	canonical: "auto",
-	// 	isForcedTrailingSlash: false
-	// },
-	// runtimeConfig: {
-	// 	public: {
-	// 		siteUrl:
-	// 			process.env.NUXT_PUBLIC_SITE_URL ||
-	// 			"https://blog-0-0.netlify.app",
-	// 		siteName: "Free For All ",
-	// 		siteDescription:
-	// 			"موقع يختص بإشعارك بكل ما هو مجاني على الانترنت",
-	// 		language: "ar"
-	// 	}
-	// },
 
 	app: {
 		head: {
