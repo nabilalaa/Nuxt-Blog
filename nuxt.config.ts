@@ -34,6 +34,9 @@ export default defineNuxtConfig({
 			xxl: 1536,
 			"2xl": 1536,
 		},
+		cloudinary: {
+			baseURL: "https://res.cloudinary.com/dnru0whph/image/upload/",
+		},
 	},
 	sitemap: {
 		sitemapName: "my_sitemap.xml",

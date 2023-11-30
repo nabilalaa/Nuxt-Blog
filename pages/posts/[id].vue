@@ -16,14 +16,18 @@
 				<p class="text-center my-8">
 					{{ p.created_at.slice(0, 10) }}
 				</p>
+				{{}}
 				<nuxt-img
-					format="webp"
+					provider="cloudinary"
 					sizes="sm:100vw md:50vw lg:400px"
-					height=""
-					width=""
+					height="100%"
+					width="100%"
 					class="mx-auto lg:h-[499px] object-cover"
-					:src="p.image_url ? p.image_url : 'https://placehold.co/600x400'"
+					:src="
+						p.image_url ? p.image_url.slice(50) : 'https://placehold.co/600x400'
+					"
 					:alt="p.title"
+					format="webp"
 				/>
 
 				<div class="content mt-10" v-html="p.content"></div>

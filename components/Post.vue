@@ -2,9 +2,10 @@
 	<NuxtLink :to="to" class="block text-white">
 		<div class="w-full h-full relative rounded-3xl">
 			<NuxtImg
+				provider="cloudinary"
 				format="webp"
 				sizes="sm:100vw md:50vw lg:400px"
-				:src="image"
+				:src="image.slice(50)"
 				class="w-full h-full object-cover absolute"
 				:alt="title"
 			/>
