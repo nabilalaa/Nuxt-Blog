@@ -16,10 +16,10 @@
 				<p class="text-center my-8">
 					{{ p.created_at.slice(0, 10) }}
 				</p>
-				{{}}
 				<nuxt-img
 					provider="cloudinary"
-					sizes="sm:100vw md:50vw lg:400px"
+					sizes="sm:100vw, md:500px"
+					densities="x1 x2"
 					height="100%"
 					width="100%"
 					class="mx-auto lg:h-[499px] object-cover"
