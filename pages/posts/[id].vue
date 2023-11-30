@@ -30,6 +30,7 @@
 					format="webp"
 				/> -->
 				<CldImage
+					aspectRatio="0/0"
 					width="auto"
 					height="auto"
 					class="mx-auto md:!w-72 object-cover"
