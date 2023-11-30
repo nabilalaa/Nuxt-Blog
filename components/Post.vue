@@ -12,9 +12,8 @@
 			<CldImage
 				width="800"
 				height="600"
-				quality="200"
 				:src="image.slice(50)"
-				class="w-full h-full object-cover absolute"
+				class="w-full h-full object-cover absolute rounded-3xl"
 				:alt="title"
 			/>
 			<div

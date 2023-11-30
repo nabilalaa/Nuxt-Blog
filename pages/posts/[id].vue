@@ -16,13 +16,24 @@
 				<p class="text-center my-8">
 					{{ p.created_at.slice(0, 10) }}
 				</p>
-				<nuxt-img
+				<!-- <nuxt-img
 					provider="cloudinary"
 					sizes="sm:100vw, md:500px"
 					densities="x1 x2"
 					height="100%"
 					width="100%"
 					class="mx-auto lg:h-[499px] object-cover"
+					:src="
+						p.image_url ? p.image_url.slice(50) : 'https://placehold.co/600x400'
+					"
+					:alt="p.title"
+					format="webp"
+				/> -->
+				<CldImage
+					width="auto"
+					height="auto"
+					class="mx-auto md:!w-72 object-cover"
+					sizes="sm:100vw, md:500px"
 					:src="
 						p.image_url ? p.image_url.slice(50) : 'https://placehold.co/600x400'
 					"
