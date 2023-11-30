@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
 	// extends: ["nuxt-seo-kit"],
+	ssr:true,
 
 	modules: [
 		"@nuxt/image",
