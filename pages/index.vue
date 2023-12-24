@@ -1,12 +1,12 @@
 <template>
-	<!-- <ins
+	<ins
 		class="adsbygoogle"
 		style="display: block"
 		data-ad-client="ca-pub-6052257709634296"
 		data-ad-slot="4020145914"
 		data-ad-format="auto"
 		data-full-width-responsive="true"
-	></ins> -->
+	></ins>
 
 	<section class="py-20">
 		<div class="container">
