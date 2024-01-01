@@ -20,6 +20,9 @@
 					{{ link.name }}
 				</NuxtLink>
 			</li>
+			<li>
+				<mode-btn @click="closeMenu"></mode-btn>
+			</li>
 		</ul>
 	</div>
 </template>

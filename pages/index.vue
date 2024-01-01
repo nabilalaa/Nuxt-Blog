@@ -34,8 +34,9 @@
 	</section>
 	<section class="py-20 dark:bg-[#0f172a]">
 		<div class="container">
-			<div class="grid h-[700px] lg:grid-cols-2 lg:gap-y-16 gap-10">
+			<div class="grid lg:grid-cols-2 lg:gap-y-16 gap-10">
 				<post-image-overlay
+					class="lg:min-h-[500px] min-h-[400px]"
 					v-for="post in posts.blogs.slice(4, 5)"
 					:key="post"
 					:to="`posts/${post.id}`"
@@ -46,6 +47,7 @@
 
 				<div class="grid content-center grid-rows-2 lg:gap-y-16 gap-10">
 					<post-image-overlay
+						class="lg:min-h-[250px] min-h-[400px]"
 						v-for="post in posts.blogs.slice(5, 7)"
 						:key="post"
 						:to="`posts/${post.id}`"
@@ -59,7 +61,7 @@
 	</section>
 	<section class="py-20 dark:bg-[#0f172a]">
 		<div class="container">
-			<div class="grid grid-cols-3 gap-10">
+			<div class="grid md:grid-cols-2 xl:grid-cols-3 gap-10">
 				<post-image
 					class="border p-4 border-gray-100 dark:border-gray-700"
 					v-for="post in posts.blogs.slice(7)"

@@ -4,13 +4,13 @@
 		:to="to"
 	>
 		<div
-			class="flex-shrink-0 relative rounded-xl w-full h-full overflow-hidden before:absolute before:inset-x-0 before:w-full before:h-full before:bg-gradient-to-t before:from-gray-900/[.7] before:z-[1]"
+			class="flex-shrink-0 h-full relative rounded-xl w-full overflow-hidden before:absolute before:inset-x-0 before:w-full before:h-full before:bg-gradient-to-t before:from-gray-900/[.7] before:z-[1]"
 		>
 			<CldImage
 				width="800"
 				height="600"
 				:src="image.slice(50)"
-				class="w-full !max-h-[100%] h-full object-cover absolute rounded-3xl"
+				class="w-full h-full object-cover absolute rounded-3xl"
 				:alt="title"
 			/>
 		</div>

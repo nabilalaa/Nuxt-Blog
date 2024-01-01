@@ -24,7 +24,7 @@
 		@apply left-0 top-0 min-h-full fixed !important;
 	}
 	.router-link-exact-active {
-		@apply text-accent !important;
+		@apply text-[#0f172a]  dark:text-white;
 	}
 	.content p {
 		line-height: 2;

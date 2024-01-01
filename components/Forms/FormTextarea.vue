@@ -2,7 +2,7 @@
 	<div class="input_group">
 		<label>{{ label }}</label>
 		<textarea
-			class="outline-none focus:outline-accent dark:bg-[#314b88]"
+			class="outline-none focus:outline-accent border border-accent dark:border-0 dark:bg-[#314b88]"
 			:placeholder="label"
 			:value="modelValue"
 			:name="name"
