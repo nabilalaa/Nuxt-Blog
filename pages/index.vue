@@ -8,55 +8,68 @@
 		data-full-width-responsive="true"
 	></ins>
 
-	<section class="py-20">
+	<section class="py-20 dark:bg-[#0f172a]">
 		<div class="container">
-			<div class="lg:flex gap-4 lg:h-[35rem] h-full">
-				<post
+			<div class="grid xl:grid-cols-2 lg:gap-y-16 gap-10">
+				<post-image
 					v-for="post in posts.blogs.slice(0, 1)"
 					:key="post"
-					class="lg:w-[60%] lg:h-full w-full h-96"
 					:to="`posts/${post.id}`"
 					:image="post.image_url"
 					:title="post.title"
 					:date="post.created_at.slice(0, 10)"
-				/>
-
-				<div
-					class="lg:flex lg:gap-y-4 lg:flex-col flex-col lg:w-1/2 lg:h-full h-full"
-				>
-					<post
-						v-for="post in posts.blogs.slice(1, 3)"
+				></post-image>
+				<div class="grid content-between gap-10">
+					<post-grids-list
+						v-for="post in posts.blogs.slice(1, 4)"
 						:key="post"
-						class="lg:w-full lg:h-1/2 w-full h-[400px] lg:my-0 my-4"
 						:to="`posts/${post.id}`"
 						:image="post.image_url"
 						:title="post.title"
 						:date="post.created_at.slice(0, 10)"
-					/>
+					></post-grids-list>
 				</div>
 			</div>
 		</div>
 	</section>
-	<section class="py-20">
+	<section class="py-20 dark:bg-[#0f172a]">
 		<div class="container">
-			<div class="grid lg:grid-cols-2 grid-cols-1 gap-4 w-full">
-				<post
-					v-for="post in posts.blogs.slice(3)"
+			<div class="grid h-[700px] lg:grid-cols-2 lg:gap-y-16 gap-10">
+				<post-image-overlay
+					v-for="post in posts.blogs.slice(4, 5)"
 					:key="post"
-					class="lg:w-full w-full h-[400px] lg:my-0 my-4"
 					:to="`posts/${post.id}`"
 					:image="post.image_url"
 					:title="post.title"
 					:date="post.created_at.slice(0, 10)"
-				/>
+				></post-image-overlay>
+
+				<div class="grid content-center grid-rows-2 lg:gap-y-16 gap-10">
+					<post-image-overlay
+						v-for="post in posts.blogs.slice(5, 7)"
+						:key="post"
+						:to="`posts/${post.id}`"
+						:image="post.image_url"
+						:title="post.title"
+						:date="post.created_at.slice(0, 10)"
+					></post-image-overlay>
+				</div>
 			</div>
-			<!-- <button
-				v-show="morebtn"
-				@click="more"
-				class="outline-none flex justify-center items-center text-white bg-accent p-4 font-bold m-auto mt-8"
-			>
-				المزيد
-			</button> -->
+		</div>
+	</section>
+	<section class="py-20 dark:bg-[#0f172a]">
+		<div class="container">
+			<div class="grid grid-cols-3 gap-10">
+				<post-image
+					class="border p-4 border-gray-100 dark:border-gray-700"
+					v-for="post in posts.blogs.slice(7)"
+					:key="post"
+					:to="`posts/${post.id}`"
+					:image="post.image_url"
+					:title="post.title"
+					:date="post.created_at.slice(0, 10)"
+				></post-image>
+			</div>
 		</div>
 	</section>
 </template>
@@ -64,8 +77,8 @@
 <script setup>
 const posts = await $fetch("/api/articles", {
 	headers: {
-		Authorization: "Nn123123"
-	}
+		Authorization: "Nn123123",
+	},
 });
 
 const morebtn = ref(true);

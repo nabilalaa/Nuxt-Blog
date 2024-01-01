@@ -2,7 +2,7 @@
 	<div class="input_group">
 		<label>{{ label }}</label>
 		<input
-			class="outline-mainColor border-secondaryColor"
+			class="outline-none focus:outline-accent border border-accent dark:border-0 dark:bg-[#314b88]"
 			:type="type"
 			:placeholder="label"
 			:value="modelValue"
@@ -15,7 +15,7 @@
 <script>
 export default {
 	name: "FormInput",
-	props: ["label", "type", "modelValue", "name"]
+	props: ["label", "type", "modelValue", "name"],
 };
 </script>
 

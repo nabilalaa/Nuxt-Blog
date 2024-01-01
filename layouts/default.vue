@@ -2,7 +2,7 @@
 	<PageLoader />
 	<Html lang="ar" dir="rtl"></Html>
 
-	<Navbar />
+	<Navbar class="dark:bg-[#0f172a]" />
 	<SideMenu />
 
 	<slot></slot>
