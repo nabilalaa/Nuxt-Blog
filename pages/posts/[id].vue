@@ -7,6 +7,12 @@
 		data-ad-format="auto"
 		data-full-width-responsive="true"
 	></ins>
+
+	<a href="https://yllix.com/publishers/577462" target="_blank"
+		><img
+			src="//ylx-aff.advertica-cdn.com/pub/728x90.png"
+			alt="ylliX - Online Advertising Network"
+	/></a>  
 	<section class="py-20">
 		<div class="container max-w-screen-md p-4">
 			<article v-for="p in post" :key="p">
@@ -50,6 +56,14 @@
 </template>
 
 <script setup>
+useHead({
+	script: [
+		{
+			type: "text/javascript",
+			src: "https://udbaa.com/bnr.php?section=General&pub=577462&format=728x90&ga=g",
+		},
+	],
+});
 // useHead({
 // 	link: [
 // 		{

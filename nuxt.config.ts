@@ -56,13 +56,15 @@ export default defineNuxtConfig({
 				{
 					name: "robots",
 					content: "follow",
-
 				},
-                {
+				{
 					name: "google-adsense-account",
 					content: "ca-pub-6052257709634296",
 				},
 			],
+		},
+		body: {
+			script: [],
 		},
 	},
 });
