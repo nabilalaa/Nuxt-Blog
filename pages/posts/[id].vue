@@ -90,7 +90,7 @@ await $fetch(`/api/articles/${id}`, {
 <style>
 iframe {
 	visibility: hidden;
-	width: 0;
-	height: 0;
+	width: 0 !important;
+	height: 0 !important;
 }
 </style>
