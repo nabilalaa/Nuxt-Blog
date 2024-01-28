@@ -55,12 +55,15 @@
 </template>
 
 <script setup>
-useHead([
-	{
-		type: "text/javascript",
-		src: "https://udbaa.com/bnr.php?section=General&pub=577462&format=728x90&ga=g",
-	},
-]); // useHead({
+useHead({
+	script: [
+		{
+			tagPosition: "bodyOpen",
+			type: "text/javascript",
+			src: "https://udbaa.com/bnr.php?section=General&pub=577462&format=728x90&ga=g",
+		},
+	],
+}); // useHead({
 // 	link: [
 // 		{
 // 			rel: "canonical",
@@ -83,3 +86,11 @@ await $fetch(`/api/articles/${id}`, {
 	post.value = response;
 });
 </script>
+
+<style>
+iframe {
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+</style>
