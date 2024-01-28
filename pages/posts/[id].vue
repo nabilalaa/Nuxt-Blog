@@ -7,14 +7,14 @@
 		data-ad-format="auto"
 		data-full-width-responsive="true"
 	></ins>
-
-	<a href="https://yllix.com/publishers/577462" target="_blank"
-		><img
-			src="//ylx-aff.advertica-cdn.com/pub/728x90.png"
-			alt="ylliX - Online Advertising Network"
-	/></a>  
 	<section class="py-20">
 		<div class="container max-w-screen-md p-4">
+			<a href="https://yllix.com/publishers/577462" target="_blank"
+				><img
+					src="//ylx-aff.advertica-cdn.com/pub/728x90.png"
+					style="border: none; margin: 0; padding: 0; vertical-align: baseline"
+					alt="ylliX - Online Advertising Network"
+			/></a>
 			<article v-for="p in post" :key="p">
 				<h1 class="text-center">
 					{{ p.title }}
@@ -23,9 +23,8 @@
 					{{ p.created_at.slice(0, 10) }}
 				</p>
 				<CldImage
-					aspectRatio="0/0"
-					width="auto"
-					height="auto"
+					width="1000"
+					height="500"
 					class="mx-auto object-cover"
 					sizes="sm:100vw, md:500px"
 					:src="
@@ -56,15 +55,12 @@
 </template>
 
 <script setup>
-useHead({
-	script: [
-		{
-			type: "text/javascript",
-			src: "https://udbaa.com/bnr.php?section=General&pub=577462&format=728x90&ga=g",
-		},
-	],
-});
-// useHead({
+useHead([
+	{
+		type: "text/javascript",
+		src: "https://udbaa.com/bnr.php?section=General&pub=577462&format=728x90&ga=g",
+	},
+]); // useHead({
 // 	link: [
 // 		{
 // 			rel: "canonical",
