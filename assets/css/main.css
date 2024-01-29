@@ -10,6 +10,9 @@
 	}
 }
 @layer components {
+	iframe {
+		@apply hidden !w-[400px] !h-full m-auto flex justify-center items-center dark:bg-[#0f172a];
+	}
 	html {
 		@apply dark:bg-[#0f172a];
 	}

@@ -7,14 +7,21 @@
 		data-ad-format="auto"
 		data-full-width-responsive="true"
 	></ins>
+
 	<section class="py-20">
 		<div class="container max-w-screen-md p-4">
-			<a href="https://yllix.com/publishers/577462" target="_blank"
-				><img
-					src="//ylx-aff.advertica-cdn.com/pub/728x90.png"
-					style="border: none; margin: 0; padding: 0; vertical-align: baseline"
-					alt="ylliX - Online Advertising Network"
-			/></a>
+			<noscript
+				><a href="https://yllix.com/publishers/577462" target="_blank"
+					><img
+						src="//ylx-aff.advertica-cdn.com/pub/728x90.png"
+						style="
+							border: none;
+							margin: 0;
+							padding: 0;
+							vertical-align: baseline;
+						"
+						alt="ylliX - Online Advertising Network" /></a
+			></noscript>
 			<article v-for="p in post" :key="p">
 				<h1 class="text-center">
 					{{ p.title }}
@@ -63,19 +70,7 @@ useHead({
 			src: "https://udbaa.com/bnr.php?section=General&pub=577462&format=728x90&ga=g",
 		},
 	],
-}); // useHead({
-// 	link: [
-// 		{
-// 			rel: "canonical",
-//             href:"https://blog-0-0.netlify.app/posts/${p.id}"
-//             	},
-// 		{
-// 			rel: "stylesheet",
-// 			href: "https://fonts.googleapis.com/css2?family=Roboto&display=swap",
-// 			crossorigin: ""
-// 		}
-// 	]
-// });
+});
 const id = useRoute().params.id;
 const post = ref(null);
 await $fetch(`/api/articles/${id}`, {
@@ -86,11 +81,3 @@ await $fetch(`/api/articles/${id}`, {
 	post.value = response;
 });
 </script>
-
-<style>
-iframe {
-	visibility: hidden;
-	width: 0 !important;
-	height: 0 !important;
-}
-</style>
