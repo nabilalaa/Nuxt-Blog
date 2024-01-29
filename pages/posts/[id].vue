@@ -10,18 +10,12 @@
 
 	<section class="py-20">
 		<div class="container max-w-screen-md p-4">
-			<noscript
-				><a href="https://yllix.com/publishers/577462" target="_blank"
-					><img
-						src="//ylx-aff.advertica-cdn.com/pub/728x90.png"
-						style="
-							border: none;
-							margin: 0;
-							padding: 0;
-							vertical-align: baseline;
-						"
-						alt="ylliX - Online Advertising Network" /></a
-			></noscript>
+			<a href="https://yllix.com/publishers/577462" target="_blank"
+				><img
+					src="//ylx-aff.advertica-cdn.com/pub/728x90.png"
+					style="border: none; margin: 0; padding: 0; vertical-align: baseline"
+					alt="ylliX - Online Advertising Network"
+			/></a>
 			<article v-for="p in post" :key="p">
 				<h1 class="text-center">
 					{{ p.title }}
