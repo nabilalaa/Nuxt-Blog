@@ -63,6 +63,11 @@ useHead({
 			type: "text/javascript",
 			src: "https://udbaa.com/bnr.php?section=General&pub=577462&format=728x90&ga=g",
 		},
+		{
+			tagPosition: "bodyOpen",
+			type: "text/javascript",
+			src: "/js/main.js",
+		},
 	],
 });
 const id = useRoute().params.id;
