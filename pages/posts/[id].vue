@@ -64,7 +64,6 @@ useHead({
 		},
 		{
 			tagPosition: "head",
-			defer: "true",
 			type: "text/javascript",
 			src: "https://js.onclckmn.com/static/onclicka.js",
 			async: "true",
