@@ -42,31 +42,33 @@
 					rel="canonical"
 					:href="`https://blog-0-0.netlify.app/posts/${p.id}`"
 				/>
+				<ads></ads>
 			</article>
 		</div>
-		<ins
-			class="adsbygoogle"
-			style="display: block"
-			data-ad-client="ca-pub-6052257709634296"
-			data-ad-slot="4020145914"
-			data-ad-format="auto"
-			data-full-width-responsive="true"
-		></ins>
 	</section>
 </template>
 
 <script setup>
 useHead({
 	script: [
+		// {
+		// 	tagPosition: "bodyOpen",
+		// 	type: "text/javascript",
+		// 	src: "https://udbaa.com/bnr.php?section=General&pub=577462&format=728x90&ga=g",
+		// },
 		{
-			tagPosition: "bodyOpen",
-			type: "text/javascript",
-			src: "https://udbaa.com/bnr.php?section=General&pub=577462&format=728x90&ga=g",
-		},
-		{
-			tagPosition: "bodyOpen",
+			tagPosition: "head",
+			defer: "true",
 			type: "text/javascript",
 			src: "/js/main.js",
+		},
+		{
+			tagPosition: "head",
+			defer: "true",
+			type: "text/javascript",
+			src: "https://js.onclckmn.com/static/onclicka.js",
+			async: "true",
+			"data-admpid": "200345",
 		},
 	],
 });
@@ -79,4 +81,6 @@ await $fetch(`/api/articles/${id}`, {
 }).then((response) => {
 	post.value = response;
 });
+
+onMounted(() => {});
 </script>
