@@ -69,6 +69,7 @@ useHead({
 			src: "https://js.onclckmn.com/static/onclicka.js",
 			async: "true",
 			"data-admpid": "200345",
+			"data-admpid": "200345",
 		},
 	],
 });
