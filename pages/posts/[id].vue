@@ -44,7 +44,7 @@
 					rel="canonical"
 					:href="`https://blog-0-0.netlify.app/posts/${p.id}`"
 				/>
-				<div class="mt-5" id="container-58eedb552068f18f39df00dc1614a498"></div>
+				<div class="mt-6" id="container-58eedb552068f18f39df00dc1614a498"></div>
 			</article>
 		</div>
 	</section>
