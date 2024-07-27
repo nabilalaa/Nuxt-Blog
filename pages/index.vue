@@ -26,6 +26,7 @@
 	</section>
 	<section class="py-20 dark:bg-[#0f172a]">
 		<div class="container">
+			<iframe data-aa='2341948' src='//ad.a-ads.com/2341948?size=320x100'></iframe>
 			<div class="grid lg:grid-cols-2 lg:gap-y-16 gap-10">
 				<post-image-overlay
 					class="lg:min-h-[500px] min-h-[400px]"
