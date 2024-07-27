@@ -7,9 +7,10 @@
 		data-ad-format="auto"
 		data-full-width-responsive="true"
 	></ins>
-<iframe data-aa='2341940' src='//ad.a-ads.com/2341940?size=728x90'></iframe>
+     
 	<section class="py-20">
 		<div class="container max-w-screen-md p-4">
+		 <iframe data-aa='2341940' src='//ad.a-ads.com/2341940?size=728x90'></iframe>
 			<a
 				href="https://www.highrevenuenetwork.com/ubtkdh2g?key=4d248e780ef4b07214ea645399178b90"
 				target="_blank"
