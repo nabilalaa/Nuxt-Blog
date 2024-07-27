@@ -7,7 +7,7 @@
 		data-ad-format="auto"
 		data-full-width-responsive="true"
 	></ins>
-
+<iframe data-aa='2341940' src='//ad.a-ads.com/2341940?size=728x90' style='width:728px; height:90px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
 	<section class="py-20">
 		<div class="container max-w-screen-md p-4">
 			<a
