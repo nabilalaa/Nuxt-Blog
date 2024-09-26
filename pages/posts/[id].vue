@@ -10,6 +10,18 @@
 
 	<section class="py-20">
 		<div class="container max-w-screen-md p-4">
+			<iframe
+				data-aa="2355054"
+				src="//ad.a-ads.com/2355054?size=728x90"
+				style="
+					width: 728px;
+					height: 90px;
+					border: 0px;
+					padding: 0;
+					overflow: hidden;
+					background-color: transparent;
+				"
+			></iframe>
 			<article v-for="p in post" :key="p">
 				<h1 class="text-center">
 					{{ p.title }}
