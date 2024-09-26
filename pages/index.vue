@@ -1,7 +1,19 @@
 <template>
 	<section class="py-20 dark:bg-[#0f172a]">
 		<div class="container">
-<iframe data-aa='2341940' src='//ad.a-ads.com/2341940?size=970x250' style='width:970px; height:250px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
+			<iframe
+				data-aa="2355054"
+				src="//ad.a-ads.com/2355054?size=728x90"
+				style="
+					width: 728px;
+					height: 90px;
+					border: 0px;
+					padding: 0;
+					overflow: hidden;
+					background-color: transparent;
+				"
+			></iframe>
+
 			<div class="grid xl:grid-cols-2 lg:gap-y-16 gap-10">
 				<post-image
 					v-for="post in posts.blogs.slice(0, 1)"
@@ -26,7 +38,6 @@
 	</section>
 	<section class="py-20 dark:bg-[#0f172a]">
 		<div class="container">
-
 			<div class="grid lg:grid-cols-2 lg:gap-y-16 gap-10">
 				<post-image-overlay
 					class="lg:min-h-[500px] min-h-[400px]"
