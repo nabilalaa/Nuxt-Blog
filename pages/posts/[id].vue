@@ -10,14 +10,6 @@
 
 	<section class="py-20">
 		<div class="container max-w-screen-md p-4">
-			<a
-				href="https://www.highrevenuenetwork.com/ubtkdh2g?key=4d248e780ef4b07214ea645399178b90"
-				target="_blank"
-				><img
-					src="//ylx-aff.advertica-cdn.com/pub/728x90.png"
-					style="border: none; margin: 0; padding: 0; vertical-align: baseline"
-					alt="ylliX - Online Advertising Network"
-			/></a>
 			<article v-for="p in post" :key="p">
 				<h1 class="text-center">
 					{{ p.title }}
@@ -44,10 +36,6 @@
 					rel="canonical"
 					:href="`https://blog-0-0.netlify.app/posts/${p.id}`"
 				/>
-				<div
-					class="mt-28"
-					id="container-58eedb552068f18f39df00dc1614a498"
-				></div>
 			</article>
 		</div>
 	</section>
@@ -66,15 +54,6 @@ useHead({
 			defer: "true",
 			type: "text/javascript",
 			src: "/js/main.js",
-		},
-		{
-			tagPosition: "head",
-			type: "text/javascript",
-			src: "//pl22337543.highrevenuenetwork.com/58eedb552068f18f39df00dc1614a498/invoke.js",
-			async: "async",
-			"data-cfasync": "false",
-			"data-admpid": "200345",
-			"data-admpid": "200345",
 		},
 	],
 });
